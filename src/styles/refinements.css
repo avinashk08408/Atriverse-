@@ -1,0 +1,249 @@
+/* ============================================================
+   ATTI VERSE — Visual refinement layer
+   A calmer editorial rhythm, clearer hierarchy, and stronger responsive behavior.
+   ============================================================ */
+
+:root {
+  --section-rule: rgba(223, 195, 131, 0.18);
+  --surface-raised: rgba(255, 255, 255, 0.065);
+}
+
+body {
+  letter-spacing: 0.005em;
+}
+
+.section {
+  border-top: 1px solid rgba(255, 255, 255, 0.035);
+}
+
+.section-title {
+  max-width: 18ch;
+  line-height: 1.04;
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+}
+
+.nav {
+  height: 88px;
+}
+
+.nav--scrolled {
+  background: rgba(7, 13, 13, 0.9);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+.nav__inner {
+  max-width: 1320px;
+}
+
+.nav__brand-name {
+  letter-spacing: 0.14em;
+}
+
+.nav__brand-sub {
+  letter-spacing: 0.22em;
+  color: rgba(223, 195, 131, 0.8);
+}
+
+.nav__link {
+  font-size: 0.68rem;
+  letter-spacing: 0.13em;
+}
+
+.nav__cta,
+.btn {
+  border-radius: 999px;
+}
+
+.btn {
+  min-height: 46px;
+  padding: 0.8rem 1.35rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+}
+
+.hero__inner {
+  width: min(100%, 1240px);
+}
+
+.hero__title-line {
+  letter-spacing: 0.045em;
+  line-height: 0.98;
+}
+
+.hero__tagline {
+  max-width: 34rem;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  line-height: 1.5;
+}
+
+.hero__actions {
+  gap: 0.8rem;
+}
+
+.about-home__grid {
+  gap: clamp(3rem, 8vw, 8rem);
+}
+
+.about-home__visual,
+.work-editorial__media,
+.team-equal__media {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--section-rule);
+}
+
+.about-home__image {
+  filter: saturate(0.88);
+}
+
+.about-home__lead {
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.5;
+}
+
+.about-home__body {
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+
+.work-editorial__item,
+.event-card,
+.service-card,
+.project-card,
+.team-equal__card,
+.upcoming-card {
+  border-radius: var(--radius-lg);
+}
+
+.work-editorial__item,
+.event-card,
+.service-card,
+.project-card,
+.upcoming-card {
+  background: var(--surface-raised);
+  border: 1px solid rgba(223, 195, 131, 0.14);
+}
+
+.work-editorial__item:hover,
+.event-card:hover,
+.service-card:hover,
+.project-card:hover,
+.team-equal__card:hover,
+.upcoming-card:hover {
+  border-color: rgba(223, 195, 131, 0.52);
+}
+
+.section-head-row {
+  align-items: end;
+  gap: 2rem;
+}
+
+.section-head__title {
+  line-height: 1.06;
+}
+
+.milestones-editorial__row {
+  border-top-color: var(--section-rule);
+  padding-block: 1.6rem;
+}
+
+.milestones-editorial__row:last-child {
+  border-bottom-color: var(--section-rule);
+}
+
+.cta-section {
+  border-top: 1px solid var(--section-rule);
+  border-bottom: 1px solid var(--section-rule);
+}
+
+@media (max-width: 1080px) {
+  .nav {
+    height: 78px;
+  }
+
+  .nav__menu,
+  .nav__cta {
+    display: none;
+  }
+
+  .nav__toggle {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--gold-line);
+    border-radius: 50%;
+  }
+
+  .hero__inner {
+    padding-inline: clamp(1.25rem, 5vw, 3rem);
+  }
+}
+
+@media (max-width: 680px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    padding-inline: 1.15rem;
+  }
+
+  .section {
+    padding-block: 4.2rem;
+  }
+
+  .section-title {
+    max-width: 100%;
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .hero__title-line {
+    font-size: clamp(3rem, 16vw, 5.5rem);
+  }
+
+  .hero__brand-lockup {
+    font-size: 0.66rem;
+  }
+
+  .hero__actions {
+    align-items: stretch;
+    flex-direction: column;
+    width: min(100%, 19rem);
+  }
+
+  .hero__actions .btn {
+    justify-content: center;
+  }
+
+  .section-head-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .about-home__mission-items {
+    gap: 0.65rem;
+  }
+
+  .work-editorial__grid {
+    gap: 1rem;
+  }
+
+  .work-editorial__item--large {
+    min-height: 22rem;
+  }
+
+  .grid-3 {
+    gap: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__slide,
+  .img__el {
+    transition: none;
+  }
+}
+
+/* Keep the refinement layer last so it wins over legacy component defaults. */
