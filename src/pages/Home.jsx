@@ -173,9 +173,11 @@ function BrandIntro() {
 }
 
 function FeaturedWork() {
+  const [showMoreWork, setShowMoreWork] = useState(false)
   const featured = WORK.filter((w) => w.featured)
   const lead = featured[0]
   const projects = featured.slice(1, 4)
+  const remaining = WORK.filter((w) => !w.featured)
   return (
     <section className="section work-index">
       <div className="container">
@@ -191,7 +193,7 @@ function FeaturedWork() {
         <div className="work-index__rule" />
         <div className="work-index__lead">
           <Reveal dir="right">
-            <Link to="/work" className="work-lead">
+            <Link to={`/work/${lead.id}`} className="work-lead">
               <div className="work-lead__media"><Img src={lead.image} alt={`${lead.title} — ${lead.category}`} /><span>01 / Lead work</span></div>
               <div className="work-lead__copy"><div className="work-index__meta"><span>{lead.category}</span><span>{lead.year}</span></div><h3>{lead.title}</h3><p>{lead.description}</p><span className="work-index__link">Read the work <b>↗</b></span></div>
             </Link>
@@ -200,13 +202,19 @@ function FeaturedWork() {
         <div className="work-index__projects">
           {projects.map((project, i) => (
             <Reveal key={project.id} dir="up" delay={i * 90}>
-              <Link to="/work" className={`work-project-spread ${i % 2 ? 'work-project-spread--reverse' : ''}`}>
+              <Link to={`/work/${project.id}`} className={`work-project-spread ${i % 2 ? 'work-project-spread--reverse' : ''}`}>
                 <div className="work-project-spread__media"><Img src={project.image} alt={`${project.title} — ${project.category}`} /></div>
                 <div className="work-project-spread__copy"><span className="work-project-spread__number">0{i + 2}</span><div className="work-index__meta"><span>{project.category}</span><span>{project.year}</span></div><h3>{project.title}</h3><p>{project.description}</p><span className="work-index__link">View the work <b>↗</b></span></div>
               </Link>
             </Reveal>
           ))}
         </div>
+        <div className="work-index__more">
+          <button type="button" className="btn btn--gold work-index__more-button" onClick={() => setShowMoreWork((visible) => !visible)} aria-expanded={showMoreWork}>
+            {showMoreWork ? 'Show Less Work' : 'More Work'} <span>{showMoreWork ? '↑' : '↓'}</span>
+          </button>
+        </div>
+        {showMoreWork && <div className="work-index__additional">{remaining.map((project, i) => <Reveal key={project.id} dir="up" delay={i * 80}><Link to={`/work/${project.id}`} className="work-project-spread"><div className="work-project-spread__media"><Img src={project.image} alt={`${project.title} — ${project.category}`} /></div><div className="work-project-spread__copy"><span className="work-project-spread__number">0{i + 5}</span><div className="work-index__meta"><span>{project.category}</span><span>{project.year}</span></div><h3>{project.title}</h3><p>{project.description}</p><span className="work-index__link">View the work <b>↗</b></span></div></Link></Reveal>)}</div>}
         <div className="work-index__footer"><span>ATTI VERSE / CREATIVE PRACTICE</span><span>Entertainment · Events · Production · Creative</span></div>
       </div>
     </section>

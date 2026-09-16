@@ -6,6 +6,7 @@ import Services from './pages/Services.jsx'
 import ServiceDetail from './pages/ServiceDetail.jsx'
 import ServiceProjectDetail from './pages/ServiceProjectDetail.jsx'
 import Work from './pages/Work.jsx'
+import WorkDetail from './pages/WorkDetail.jsx'
 import Events from './pages/Events.jsx'
 import EventDetail from './pages/EventDetail.jsx'
 import Productions from './pages/Productions.jsx'
@@ -39,6 +40,7 @@ function App() {
         <Route path="services/:slug" element={<ServiceDetail />} />
         <Route path="services/:slug/project/:projectIndex" element={<ServiceProjectDetail />} />
         <Route path="work" element={<Work />} />
+        <Route path="work/:slug" element={<WorkDetail />} />
         <Route path="events" element={<Events />} />
         <Route path="events/:slug" element={<EventDetail />} />
         <Route path="productions" element={<Productions />} />
