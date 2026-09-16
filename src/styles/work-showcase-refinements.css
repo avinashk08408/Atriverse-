@@ -28,3 +28,26 @@
 .work-showcase__footer { display:flex; justify-content:space-between; gap:1rem; margin-top:1rem; padding-top:.8rem; border-top:1px solid var(--gold-line); color:var(--text-faint); font-size:.58rem; letter-spacing:.13em; text-transform:uppercase; }
 @media(max-width:800px) { .work-showcase__header,.work-showcase__layout { grid-template-columns:1fr; } .work-showcase__layout { gap:1rem; } .work-showcase__supporting { grid-template-columns:repeat(2,1fr); grid-template-rows:none; } }
 @media(max-width:560px) { .work-showcase__supporting { grid-template-columns:1fr; } .work-showcase__footer { flex-direction:column; } .work-case--supporting .work-case__media { aspect-ratio:16 / 9; } }
+
+/* Cinematic portfolio composition: a wide lead frame plus three supporting cases. */
+.work-showcase__layout { display:block; }
+.work-case--lead { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr); min-height:390px; }
+.work-case--lead .work-case__media { aspect-ratio:auto; min-height:390px; }
+.work-case--lead .work-case__body { justify-content:center; padding:clamp(1.5rem,4vw,3.25rem); }
+.work-case--lead .work-case__body h3 { max-width:10ch; font-size:clamp(2.5rem,5vw,5rem); }
+.work-showcase__supporting { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); grid-template-rows:none; gap:1rem; margin-top:1rem; }
+.work-case--supporting .work-case__media { aspect-ratio:16 / 10; }
+.work-case--supporting .work-case__body { min-height:180px; }
+.work-case--supporting .work-case__body h3 { margin-top:1rem; font-size:clamp(1.35rem,2vw,2rem); }
+.work-case--supporting .work-case__body p { margin-top:.65rem; font-size:.78rem; }
+.work-showcase__supporting .work-case__link { padding-top:1rem; }
+@media(max-width:800px) {
+  .work-case--lead { grid-template-columns:1fr; min-height:0; }
+  .work-case--lead .work-case__media { min-height:0; aspect-ratio:16 / 9; }
+  .work-case--lead .work-case__body { min-height:300px; }
+  .work-showcase__supporting { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+@media(max-width:620px) {
+  .work-showcase__supporting { grid-template-columns:1fr; }
+  .work-case--supporting .work-case__body { min-height:0; }
+}

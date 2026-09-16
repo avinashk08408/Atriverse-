@@ -175,7 +175,7 @@ function BrandIntro() {
 function FeaturedWork() {
   const featured = WORK.filter((w) => w.featured)
   const lead = featured[0]
-  const supporting = featured.slice(1, 3)
+  const supporting = featured.slice(1, 4)
   return (
     <section className="section work-showcase">
       <div className="container">
@@ -193,7 +193,7 @@ function FeaturedWork() {
           <Reveal dir="right">
             <Link to="/work" className="work-case work-case--lead">
               <div className="work-case__media"><Img src={lead.image} alt={`${lead.title} — ${lead.category}`} /></div>
-              <div className="work-case__body"><div className="work-case__meta"><span>01 / Featured case</span><span>{lead.year}</span></div><h3>{lead.title}</h3><p>{lead.description}</p><span className="work-case__link">Explore project <b>↗</b></span></div>
+              <div className="work-case__body"><div className="work-case__meta"><span>01 / Featured case</span><span>{lead.category} · {lead.year}</span></div><h3>{lead.title}</h3><p>{lead.description}</p><span className="work-case__link">Explore project <b>↗</b></span></div>
             </Link>
           </Reveal>
           <div className="work-showcase__supporting">
@@ -201,7 +201,7 @@ function FeaturedWork() {
               <Reveal key={project.id} dir="up" delay={i * 100}>
                 <Link to="/work" className="work-case work-case--supporting">
                   <div className="work-case__media"><Img src={project.image} alt={`${project.title} — ${project.category}`} /></div>
-                  <div className="work-case__body"><div className="work-case__meta"><span>0{i + 2} / {project.category}</span><span>{project.year}</span></div><h3>{project.title}</h3><span className="work-case__link">View case <b>↗</b></span></div>
+                  <div className="work-case__body"><div className="work-case__meta"><span>0{i + 2} / {project.category}</span><span>{project.year}</span></div><h3>{project.title}</h3><p>{project.description}</p><span className="work-case__link">View case <b>↗</b></span></div>
                 </Link>
               </Reveal>
             ))}
