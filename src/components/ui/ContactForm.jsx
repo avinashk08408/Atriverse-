@@ -28,7 +28,6 @@ function ContactForm({ kind = 'General Collaboration', compact = false }) {
       : [
           { name: 'name', label: 'Name', placeholder: 'Your name', type: 'text', required: true },
           { name: 'email', label: 'Email address', placeholder: 'you@email.com', type: 'email', required: true },
-          ...COMMON_FIELDS,
         ]
 
   return (
