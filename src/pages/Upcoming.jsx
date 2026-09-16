@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Seo from '../components/ui/Seo.jsx'
 import Reveal from '../components/ui/Reveal.jsx'
 import SectionHeading from '../components/ui/SectionHeading.jsx'
@@ -34,6 +35,7 @@ function CategoryBlock({ eyebrow, title, items, idx }) {
 }
 
 function Upcoming() {
+  const [joinFormOpen, setJoinFormOpen] = useState(false)
   return (
     <>
       <Seo
@@ -61,7 +63,12 @@ function Upcoming() {
             Want to be the first to know, or be part of what's next? Join the verse.
           </>
         }
-        primary={{ label: 'Join The Verse', to: '/contact' }}
+        primary={{ label: 'Join The Verse' }}
+        secondary={false}
+        inlineForm
+        inlineFormKind="Join ATTI VERSE"
+        formOpen={joinFormOpen}
+        onFormToggle={() => setJoinFormOpen((open) => !open)}
       />
     </>
   )
