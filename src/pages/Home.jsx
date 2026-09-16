@@ -15,7 +15,6 @@ import { SITE } from '../config/site.js'
 import { FEATURED_EVENTS, EVENT_PLACEHOLDERS } from '../data/events.js'
 import { WORK } from '../data/work.js'
 import { LEADERSHIP } from '../data/team.js'
-import { HOME_MILESTONES } from '../data/achievements.js'
 
 function Hero() {
   const heroSlides = [IMAGES.hero, IMAGES.events.srmPongal2026, IMAGES.events.culturalStage, IMAGES.gallery[0], IMAGES.gallery[1]]
@@ -274,6 +273,14 @@ function FeaturedEvents() {
 }
 
 function Milestones() {
+  const [activeCoverage, setActiveCoverage] = useState(null)
+  const pressCoverage = [
+    { event: 'SRM Pongal Vizha 2026', publication: 'Publication name to be added', date: 'Date to be added', image: IMAGES.events.srmPongal2026 },
+    { event: 'Dance Competition Participation', publication: 'Publication name to be added', date: 'Date to be added', image: IMAGES.events.danceCompetition },
+    { event: 'Flash Mob Performance', publication: 'Publication name to be added', date: 'Date to be added', image: IMAGES.events.flashMob },
+    { event: 'Cultural Stage Performance', publication: 'Publication name to be added', date: 'Date to be added', image: IMAGES.events.culturalStage },
+  ]
+
   return (
     <section className="section milestones-newsroom">
       <div className="container">
@@ -292,18 +299,31 @@ function Milestones() {
           </Reveal>
         </div>
         <div className="newsroom__rule" />
-        <div className="newsroom__grid">
-          {HOME_MILESTONES.map((m, i) => (
-            <Reveal key={m.title} dir="up" delay={i * 50}>
-              <article className={`news-story ${i === 0 ? 'news-story--lead' : ''}`}>
-                <div className="news-story__meta"><span>{String(i + 1).padStart(2, '0')}</span><span>{i < 2 ? 'ORGANIZATION' : i < 4 ? 'CREATIVE FIELD' : 'ATTI VERSE NOTE'}</span></div>
-                <h3>{m.title}</h3>
-                {m.note && <p>{m.note}</p>}
-                <span className="news-story__read">VERIFIED RECORD ↗</span>
+        <div className="press-list" aria-label="Newspaper coverage records">
+          {pressCoverage.map((item, i) => (
+            <Reveal key={item.event} dir="up" delay={i * 60}>
+              <article className="press-row">
+                <span className="press-row__number">{String(i + 1).padStart(2, '0')}</span>
+                <div className="press-row__event"><span className="eyebrow">Event coverage</span><h3>{item.event}</h3></div>
+                <div className="press-row__publication"><span>Newspaper / publication</span><strong>{item.publication}</strong><small>{item.date}</small></div>
+                <button type="button" className="press-row__gallery" onClick={() => setActiveCoverage(item)}><span>Open gallery</span><b>↗</b></button>
               </article>
             </Reveal>
           ))}
         </div>
+        <p className="press-list__note">Publication names, dates and newspaper scans can be updated as press records are documented.</p>
+        {activeCoverage && (
+          <div className="press-gallery" role="dialog" aria-modal="true" aria-label={`${activeCoverage.event} gallery`} onClick={() => setActiveCoverage(null)}>
+            <div className="press-gallery__panel" onClick={(event) => event.stopPropagation()}>
+              <button type="button" className="press-gallery__close" onClick={() => setActiveCoverage(null)} aria-label="Close gallery">×</button>
+              <span className="eyebrow">{activeCoverage.event}</span>
+              <h3>{activeCoverage.publication}</h3>
+              <p>{activeCoverage.date} · Associated event visual</p>
+              <div className="press-gallery__image"><Img src={activeCoverage.image} alt={`${activeCoverage.event} visual`} /></div>
+              <small>Newspaper clipping image to be added when the press scan is available.</small>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )
