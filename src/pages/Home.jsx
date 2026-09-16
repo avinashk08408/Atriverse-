@@ -174,44 +174,40 @@ function BrandIntro() {
 
 function FeaturedWork() {
   const featured = WORK.filter((w) => w.featured)
+  const lead = featured[0]
+  const supporting = featured.slice(1, 3)
   return (
-    <section className="section">
+    <section className="section work-showcase">
       <div className="container">
-        <div className="work-editorial">
-          <div className="work-editorial__head">
-            <Reveal dir="up">
-              <span className="eyebrow">Our Work</span>
-              <h2 className="section-title" style={{ marginTop: '1.1rem', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)' }}>
-                SELECTED <span className="text-gold">WORK.</span>
-              </h2>
-            </Reveal>
-            <Reveal dir="up" delay={100}>
-              <Link to="/work" className="text-link" style={{ marginTop: '1.5rem', display: 'inline-flex' }}>
-                View All Work →
-              </Link>
-            </Reveal>
-          </div>
-
-          <div className="work-editorial__grid">
-            {featured.slice(0, 3).map((project, i) => (
-              <Reveal key={project.id} dir="up" delay={i * 80}>
-                <Link
-                  to="/work"
-                  className={`work-editorial__item ${i === 0 ? 'work-editorial__item--large' : ''}`}
-                >
-                  <div className="work-editorial__media">
-                    <Img src={project.image} alt={`${project.title} — ${project.category}`} />
-                  </div>
-                  <div className="work-editorial__overlay">
-                    <span className="work-editorial__cat">{project.category}</span>
-                    <h3 className="work-editorial__title">{project.title}</h3>
-                    <span className="work-editorial__arrow" aria-hidden="true">→</span>
-                  </div>
+        <div className="work-showcase__header">
+          <Reveal dir="up">
+            <span className="eyebrow">Selected Work / Portfolio</span>
+            <h2 className="section-title">WORK BUILT FOR <span className="text-gold">IMPACT.</span></h2>
+          </Reveal>
+          <Reveal dir="left" delay={100}>
+            <div className="work-showcase__header-side"><p>Selected engagements across entertainment, events, production and creative direction.</p><Link to="/work" className="btn btn--outline">View All Work <span>↗</span></Link></div>
+          </Reveal>
+        </div>
+        <div className="work-showcase__rule" />
+        <div className="work-showcase__layout">
+          <Reveal dir="right">
+            <Link to="/work" className="work-case work-case--lead">
+              <div className="work-case__media"><Img src={lead.image} alt={`${lead.title} — ${lead.category}`} /></div>
+              <div className="work-case__body"><div className="work-case__meta"><span>01 / Featured case</span><span>{lead.year}</span></div><h3>{lead.title}</h3><p>{lead.description}</p><span className="work-case__link">Explore project <b>↗</b></span></div>
+            </Link>
+          </Reveal>
+          <div className="work-showcase__supporting">
+            {supporting.map((project, i) => (
+              <Reveal key={project.id} dir="up" delay={i * 100}>
+                <Link to="/work" className="work-case work-case--supporting">
+                  <div className="work-case__media"><Img src={project.image} alt={`${project.title} — ${project.category}`} /></div>
+                  <div className="work-case__body"><div className="work-case__meta"><span>0{i + 2} / {project.category}</span><span>{project.year}</span></div><h3>{project.title}</h3><span className="work-case__link">View case <b>↗</b></span></div>
                 </Link>
               </Reveal>
             ))}
           </div>
         </div>
+        <div className="work-showcase__footer"><span>ATTI VERSE / CAPABILITY PROOF</span><span>Entertainment · Events · Production · Creative</span></div>
       </div>
     </section>
   )

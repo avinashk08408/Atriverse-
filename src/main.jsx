@@ -13,6 +13,7 @@ import './styles/team-page-refinements.css'
 import './styles/about-corrections.css'
 import './styles/milestones-newsroom.css'
 import './styles/event-detail-refinements.css'
+import './styles/work-showcase-refinements.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
