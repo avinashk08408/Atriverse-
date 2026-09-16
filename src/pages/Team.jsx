@@ -3,7 +3,6 @@ import Reveal from '../components/ui/Reveal.jsx'
 import SectionHeading from '../components/ui/SectionHeading.jsx'
 import PageHeader from '../components/ui/PageHeader.jsx'
 import Img from '../components/ui/Img.jsx'
-import CTASection from '../components/ui/CTASection.jsx'
 import { LEADERSHIP, TEAM_CATEGORIES } from '../data/team.js'
 
 function Leadership() {
@@ -97,14 +96,6 @@ function Team() {
       />
       <Leadership />
       <Categories />
-      <CTASection
-        copy={
-          <>
-            Want to join the collective? Performers, creators and organizers — we're always building.
-          </>
-        }
-        primary={{ label: 'Collaborate With Us', to: '/contact' }}
-      />
     </>
   )
 }

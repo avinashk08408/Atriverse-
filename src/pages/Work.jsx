@@ -11,6 +11,7 @@ const CAT_ALIASES = { ALL: (w) => true }
 
 function Work() {
   const [filter, setFilter] = useState('ALL')
+  const [eventFormOpen, setEventFormOpen] = useState(false)
   const visible = WORK.filter(CAT_ALIASES[filter] || ((w) => w.category.toUpperCase() === filter))
 
   return (
@@ -65,11 +66,18 @@ function Work() {
       </section>
 
       <CTASection
+        title="HAVE A BRIEF IN MIND?"
         copy={
           <>
             Have a project in mind? Let's add your event, film or creative brief to the verse.
           </>
         }
+        primary={{ label: 'Organize an Event' }}
+        secondary={false}
+        inlineForm
+        inlineFormKind="Organize an Event"
+        formOpen={eventFormOpen}
+        onFormToggle={() => setEventFormOpen((open) => !open)}
       />
     </div>
   )
