@@ -47,7 +47,7 @@
 
 .team-spotlight__grid {
   display: grid;
-  grid-template-columns: 1.45fr repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
   align-items: start;
   margin-top: clamp(3rem, 6vw, 5rem);
@@ -56,6 +56,11 @@
 .team-spotlight__card {
   position: relative;
   min-width: 0;
+}
+
+.team-spotlight__card--feature {
+  padding-top: 0.35rem;
+  border-top: 2px solid var(--gold);
 }
 
 .team-spotlight__media {
@@ -151,14 +156,6 @@
   .team-spotlight__grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .team-spotlight__card--feature {
-    grid-column: 1 / -1;
-  }
-
-  .team-spotlight__card--feature .team-spotlight__media {
-    aspect-ratio: 16 / 9;
-  }
 }
 
 @media (max-width: 560px) {
@@ -173,14 +170,5 @@
 
   .team-spotlight__grid {
     grid-template-columns: 1fr;
-  }
-
-  .team-spotlight__card--feature {
-    grid-column: auto;
-  }
-
-  .team-spotlight__card--feature .team-spotlight__media,
-  .team-spotlight__media {
-    aspect-ratio: 4 / 5;
   }
 }
