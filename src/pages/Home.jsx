@@ -275,36 +275,34 @@ function FeaturedEvents() {
 
 function Milestones() {
   return (
-    <section className="section">
+    <section className="section milestones-newsroom">
       <div className="container">
-        <div className="milestones-editorial">
-          <div className="milestones-editorial__head">
-            <Reveal dir="up">
-              <span className="eyebrow">Milestones</span>
-              <h2 className="section-title" style={{ marginTop: '1.1rem', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)' }}>
-                BUILT ON <span className="text-gold">EARNED MILESTONES.</span>
-              </h2>
+        <div className="newsroom__masthead">
+          <span>THE ATTI VERSE CHRONICLE</span>
+          <span>VERIFIED RECORD / MILESTONES</span>
+          <span>ISSUE 01</span>
+        </div>
+        <div className="newsroom__intro">
+          <Reveal dir="up">
+            <span className="eyebrow">Milestones / News Desk</span>
+            <h2 className="section-title">BUILT ON <span className="text-gold">EARNED MILESTONES.</span></h2>
+          </Reveal>
+          <Reveal dir="left" delay={100}>
+            <p>Verified developments, organizational progress and creative experience — reported as the record grows.</p>
+          </Reveal>
+        </div>
+        <div className="newsroom__rule" />
+        <div className="newsroom__grid">
+          {HOME_MILESTONES.map((m, i) => (
+            <Reveal key={m.title} dir="up" delay={i * 50}>
+              <article className={`news-story ${i === 0 ? 'news-story--lead' : ''}`}>
+                <div className="news-story__meta"><span>{String(i + 1).padStart(2, '0')}</span><span>{i < 2 ? 'ORGANIZATION' : i < 4 ? 'CREATIVE FIELD' : 'ATTI VERSE NOTE'}</span></div>
+                <h3>{m.title}</h3>
+                {m.note && <p>{m.note}</p>}
+                <span className="news-story__read">VERIFIED RECORD ↗</span>
+              </article>
             </Reveal>
-            <Reveal dir="up" delay={100}>
-              <p style={{ color: 'var(--text-muted)', marginTop: '1rem', maxWidth: '50ch' }}>
-                Every milestone below is verified. Nothing here is invented.
-              </p>
-            </Reveal>
-          </div>
-
-          <div className="milestones-editorial__list">
-            {HOME_MILESTONES.map((m, i) => (
-              <Reveal key={m.title} dir="up" delay={i * 50}>
-                <div className="milestones-editorial__row">
-                  <span className="milestones-editorial__num">{String(i + 1).padStart(2, '0')}</span>
-                  <div className="milestones-editorial__body">
-                    <h3 className="milestones-editorial__title">{m.title}</h3>
-                    {m.note && <p className="milestones-editorial__note">{m.note}</p>}
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     </section>
