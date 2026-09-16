@@ -158,7 +158,7 @@ function CoreValues() {
       <div className="container">
         <SectionHeading
           eyebrow="Values"
-          title={<>THE <span className="text-gold">PRINCIPLES WE</span> PERFORM BY</>}
+          title={<>THE <span className="text-gold">PRINCIPLES WE PERFORM</span> BY</>}
           subtitle="Sixteen principles held together by one culture."
         />
         <div className="values-editorial" style={{ marginTop: '1.5rem' }}>
@@ -179,7 +179,7 @@ function Structure() {
       <div className="container">
         <SectionHeading
           eyebrow="Organizational Structure"
-          title={<>BUILT WITH STRUCTURE.<br />DRIVEN BY <span className="text-gold">CREATIVITY.</span></>}
+          title={<>BUILT WITH <span className="text-gold">STRUCTURE.</span><br />DRIVEN BY <span className="text-gold">CREATIVITY.</span></>}
           subtitle="Executive leadership and governance oversee five dedicated divisions."
         />
         <OrganizationTree />
