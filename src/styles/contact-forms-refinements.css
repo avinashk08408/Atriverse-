@@ -70,3 +70,6 @@
 .footer__contact-link strong { color:var(--gold-soft); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; }
 .footer__social--disabled { cursor:default; opacity:.55; }
 .footer__social--disabled:hover { color:var(--gold-soft); background:transparent; transform:none; }
+
+.contact-form__field select { width:100%; border:1px solid rgba(176,140,64,.35); border-radius:0; outline:0; padding:.8rem .85rem; background:rgba(7,13,13,.5); color:var(--ink); font:inherit; font-size:.86rem; }
+.contact-form__field select:focus { border-color:var(--gold); box-shadow:0 0 0 2px rgba(176,140,64,.12); }
