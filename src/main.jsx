@@ -6,6 +6,7 @@ import './styles/tokens.css'
 import './styles/base.css'
 import './styles/components.css'
 import './styles/refinements.css'
+import './styles/event-refinements.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

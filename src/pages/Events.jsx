@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import Seo from '../components/ui/Seo.jsx'
 import Reveal from '../components/ui/Reveal.jsx'
 import Img from '../components/ui/Img.jsx'
@@ -9,14 +10,41 @@ import CTASection from '../components/ui/CTASection.jsx'
 import { Link } from 'react-router-dom'
 import { FEATURED_EVENTS, EVENT_PLACEHOLDERS } from '../data/events.js'
 
+function FeaturedEventMedia({ event }) {
+  const slides = event.gallery?.length ? event.gallery : [event.image]
+  const [activeSlide, setActiveSlide] = useState(0)
+
+  useEffect(() => {
+    if (slides.length < 2) return undefined
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slides.length)
+    }, 5500)
+    return () => window.clearInterval(timer)
+  }, [slides.length])
+
+  return (
+    <div className="events-featured__media events-featured__media--slideshow">
+      <Img key={slides[activeSlide]} src={slides[activeSlide]} alt={`${event.title} — image ${activeSlide + 1} of ${slides.length}`} />
+      <span>{event.category}</span>
+      {slides.length > 1 && (
+        <div className="events-featured__slides" aria-label={`${slides.length} event photos`}>
+          {slides.map((_, slideIndex) => (
+            <i key={slideIndex} className={slideIndex === activeSlide ? 'is-active' : ''} />
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
 function VerifiedEventDetail({ event }) {
   return (
-    <section className="section events-featured">
+    <section id={event.id} className="section events-featured">
       <div className="container">
         <div className="events-featured__label"><span>01 / Verified Event</span><span>ATTI VERSE / EVENTS</span></div>
         <div className="events-featured__grid">
         <Reveal dir="right">
-          <div className="events-featured__media"><Img src={event.image} alt={event.title} /><span>{event.category}</span></div>
+          <FeaturedEventMedia event={event} />
         </Reveal>
         <div className="events-featured__copy">
           <Reveal dir="up">

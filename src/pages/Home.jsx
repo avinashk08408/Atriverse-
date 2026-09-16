@@ -237,7 +237,7 @@ function FeaturedEvents() {
             <h2 className="section-title section-head__title">MOMENTS WE'VE CREATED</h2>
           </div>
           <Reveal dir="up" delay={150}>
-            <Link to="/events" className="text-link text-link--dark">
+            <Link to="/events#srm-pongal-vizha-2026" className="text-link text-link--dark">
               View All Events →
             </Link>
           </Reveal>

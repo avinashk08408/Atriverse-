@@ -15,7 +15,10 @@ export const EVENTS = [
     description:
       'ATTI VERSE participated in cultural celebrations through entertainment and performance activities.',
     image: IMAGES.events.srmPongal2026,
-    gallery: [],
+    gallery: [
+      IMAGES.events.srmPongal2026,
+      ...IMAGES.gallery.slice(0, 5),
+    ],
     certificate: null,
     video: null, // set to a YouTube embed URL or video path later
   },
