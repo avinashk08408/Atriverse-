@@ -44,7 +44,7 @@ const TIMELINE = [
 
 function WhoWeAre() {
   return (
-    <section className="section about-profile">
+    <section className="section about-profile about-profile--executive">
       <div className="container">
         <div className="about-profile__top">
           <SectionHeading eyebrow="Who We Are" title={<>A MULTI-DISCIPLINARY <span className="text-gold">CREATIVE ORGANIZATION</span></>} />
@@ -78,14 +78,6 @@ function WhoWeAre() {
           </div>
         </div>
       </div>
-        <Reveal dir="right" delay={150}>
-          <Img
-            src={IMAGES.aboutHome}
-            alt="The people and creative work of ATTI VERSE"
-            aspect="4 / 3"
-            style={{ borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-soft)' }}
-          />
-        </Reveal>
       </div>
     </section>
   )
@@ -93,13 +85,14 @@ function WhoWeAre() {
 
 function OurStory() {
   return (
-    <section className="section section--off-white">
+    <section className="section section--off-white about-story">
       <div className="container">
         <SectionHeading center eyebrow="Our Story" title="THE JOURNEY OF THE VERSE" />
         <div className="timeline" style={{ marginTop: '3rem' }}>
           {TIMELINE.map((item, i) => (
             <Reveal key={item.title} dir="up" delay={i * 60}>
-              <article className="timeline__item">
+              <article className="timeline__item about-story__item">
+                <span className="about-story__index">{String(i + 1).padStart(2, '0')}</span>
                 <h3 className="timeline__title">{item.title}</h3>
                 <p className="timeline__desc">{item.desc}</p>
               </article>
@@ -113,7 +106,7 @@ function OurStory() {
 
 function Vision() {
   return (
-    <section className="section section--dark">
+    <section className="section section--dark about-vision">
       <div className="container grid-2">
         <div>
           <SectionHeading

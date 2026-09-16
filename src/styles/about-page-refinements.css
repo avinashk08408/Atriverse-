@@ -1,0 +1,157 @@
+/* About page: executive company-profile presentation. */
+.about-profile--executive {
+  background:
+    radial-gradient(70% 85% at 88% 8%, rgba(176, 140, 64, 0.1), transparent 65%),
+    var(--emerald-bg);
+}
+
+.about-profile--executive .about-profile__top {
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.55fr);
+  gap: clamp(2rem, 8vw, 8rem);
+  align-items: end;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--gold-line);
+}
+
+.about-profile--executive .about-profile__top .section-title {
+  max-width: 13ch;
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: 0.98;
+}
+
+.about-profile--executive .about-profile__lead {
+  border-left: 1px solid var(--gold);
+  padding-left: 1.25rem;
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.about-profile--executive .about-profile__body {
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.8fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+
+.about-profile--executive .about-profile__media {
+  min-height: 400px;
+  border: 1px solid var(--gold-line);
+  box-shadow: 18px 18px 0 rgba(176, 140, 64, 0.08);
+}
+
+.about-profile--executive .about-profile__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-profile--executive .about-profile__copy > .is-reveal:first-child p {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+  line-height: 1.35;
+}
+
+.about-profile--executive .about-profile__metrics {
+  margin-top: 2rem;
+  border-top-color: var(--gold-line);
+}
+
+.about-story {
+  background: var(--emerald-950);
+}
+
+.about-story .section-head {
+  max-width: 700px;
+}
+
+.about-story__item {
+  position: relative;
+  padding: 1.4rem 1.5rem 1.5rem 4rem;
+  border: 1px solid rgba(176, 140, 64, 0.2);
+  background: rgba(255, 255, 255, 0.025);
+  transition: border-color 0.35s ease, background 0.35s ease, transform 0.35s ease;
+}
+
+.about-story__item:hover {
+  border-color: var(--gold-line);
+  background: rgba(176, 140, 64, 0.07);
+  transform: translateY(-4px);
+}
+
+.about-story__index {
+  position: absolute;
+  top: 1.45rem;
+  left: 1.25rem;
+  color: var(--gold);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+}
+
+.about-story__item .timeline__title {
+  color: var(--white);
+  font-size: 1.18rem;
+}
+
+.about-story__item .timeline__desc {
+  margin-top: 0.55rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.about-vision {
+  border-block: 1px solid var(--section-rule);
+  background:
+    linear-gradient(105deg, rgba(176, 140, 64, 0.09), transparent 45%),
+    var(--emerald-deep);
+}
+
+.about-vision .grid-2 {
+  align-items: end;
+}
+
+.about-vision .section-title {
+  max-width: 12ch;
+  font-size: clamp(2.3rem, 4.8vw, 4.3rem);
+  line-height: 0.98;
+}
+
+.about-vision .is-reveal p {
+  max-width: 52ch;
+  color: var(--text-muted) !important;
+  font-size: 1rem !important;
+  line-height: 1.85;
+}
+
+.about-mission,
+.about-meaning,
+.about-foundation {
+  border-top: 1px solid rgba(176, 140, 64, 0.18);
+}
+
+.about-page-refinement .section-head__title {
+  max-width: 14ch;
+}
+
+@media (max-width: 800px) {
+  .about-profile--executive .about-profile__top,
+  .about-profile--executive .about-profile__body {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-profile--executive .about-profile__media {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 560px) {
+  .about-profile--executive .about-profile__top .section-title,
+  .about-vision .section-title {
+    font-size: clamp(2.2rem, 12vw, 3.5rem);
+  }
+
+  .about-story__item {
+    padding-left: 3.5rem;
+  }
+}
