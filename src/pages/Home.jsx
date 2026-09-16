@@ -6,6 +6,7 @@ import Img from '../components/ui/Img.jsx'
 import Icon from '../components/ui/Icon.jsx'
 import SectionHeading from '../components/ui/SectionHeading.jsx'
 import CTASection from '../components/ui/CTASection.jsx'
+import ContactForm from '../components/ui/ContactForm.jsx'
 import EventCard from '../components/cards/EventCard.jsx'
 import WhyAttii from '../components/sections/WhyAttii.jsx'
 import ServicesIndex from '../components/sections/ServicesIndex.jsx'
@@ -18,6 +19,7 @@ import { LEADERSHIP } from '../data/team.js'
 function Hero() {
   const heroSlides = [IMAGES.hero, IMAGES.events.srmPongal2026, IMAGES.events.culturalStage, IMAGES.gallery[0], IMAGES.gallery[1]]
   const [activeSlide, setActiveSlide] = useState(0)
+  const [workWithUsOpen, setWorkWithUsOpen] = useState(false)
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -82,10 +84,11 @@ function Hero() {
             <span>Explore Our Work</span>
             <Icon name="arrow-right" size={16} className="btn--icon-arrow" />
           </Link>
-          <Link to="/contact" className="btn btn--outline">
-            <span>Work With Us</span>
-          </Link>
+          <button type="button" className="btn btn--outline" onClick={() => setWorkWithUsOpen((open) => !open)} aria-expanded={workWithUsOpen}>
+            <span>{workWithUsOpen ? 'Close Form' : 'Work With Us'}</span>
+          </button>
         </div>
+        {workWithUsOpen && <div className="hero__inline-form"><ContactForm kind="Join ATTI VERSE" compact /></div>}
 
         <div className="hero__meta hero-line" style={{ animationDelay: '0.85s' }}>
           <span>Entertainment</span>

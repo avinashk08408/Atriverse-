@@ -13,6 +13,7 @@ const ALL_ITEMS = [...GALLERY, ...GALLERY_CERTIFICATES]
 function Gallery() {
   const [filter, setFilter] = useState('ALL')
   const [lightboxIndex, setLightboxIndex] = useState(null)
+  const [shootFormOpen, setShootFormOpen] = useState(false)
 
   const visible = filter === 'ALL' ? ALL_ITEMS : ALL_ITEMS.filter((g) => g.category.toUpperCase() === filter)
   const lightboxItems = lightboxIndex !== null ? visible : []
@@ -63,7 +64,12 @@ function Gallery() {
             Want moments like these captured at your event? Our production team is ready.
           </>
         }
-        primary={{ label: 'Book A Shoot', to: '/contact' }}
+        primary={{ label: 'Book A Shoot' }}
+        secondary={false}
+        inlineForm
+        inlineFormKind="Organize an Event"
+        formOpen={shootFormOpen}
+        onFormToggle={() => setShootFormOpen((open) => !open)}
       />
     </div>
   )

@@ -81,3 +81,8 @@
 .footer__link { font-size:.88rem !important; }
 .footer__contact-link { font-size:.84rem !important; }
 .footer__contact-link strong { font-size:.72rem !important; }
+
+.hero__inline-form { width:min(100%, 680px); margin:1.2rem auto 0; animation:collaborationFormIn .45s var(--ease-out) both; text-align:left; }
+.hero__inline-form .contact-form { padding:1rem; background:rgba(7,13,13,.85); backdrop-filter:blur(10px); }
+.hero__inline-form .contact-form__submit { width:auto; min-height:42px; margin-top:.8rem; padding:.65rem 1rem; }
+@media(max-width:560px) { .hero__inline-form { width:100%; } }
