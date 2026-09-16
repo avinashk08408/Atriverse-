@@ -76,14 +76,6 @@ function WhoWeAre() {
           </div>
         </div>
       </div>
-        <Reveal dir="right" delay={150}>
-          <Img
-            src={IMAGES.aboutHome}
-            alt="The people and creative work of ATTI VERSE"
-            aspect="4 / 3"
-            style={{ borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-soft)' }}
-          />
-        </Reveal>
       </div>
     </section>
   )
@@ -142,7 +134,7 @@ function Mission() {
     <section className="section about-mission">
       <div className="container">
         <div className="about-mission__header">
-          <SectionHeading eyebrow="Mission / Operating Commitments" title={<>WHAT WE ARE BUILT TO <span className="text-gold">DO</span></>} />
+          <SectionHeading eyebrow="Mission / Operating Commitments" title={<>WHAT WE ARE <span className="text-gold">BUILT TO DO</span></>} />
           <p>Eight operating principles translate the ATTI VERSE vision into consistent creative work.</p>
         </div>
         <div className="mission-num about-mission__grid about-mission__list">
@@ -166,7 +158,7 @@ function CoreValues() {
       <div className="container">
         <SectionHeading
           eyebrow="Values"
-          title={<>THE PRINCIPLES WE <span className="text-gold">PERFORM</span> BY</>}
+          title={<>THE <span className="text-gold">PRINCIPLES WE</span> PERFORM BY</>}
           subtitle="Sixteen principles held together by one culture."
         />
         <div className="values-editorial" style={{ marginTop: '1.5rem' }}>
@@ -187,7 +179,7 @@ function Structure() {
       <div className="container">
         <SectionHeading
           eyebrow="Organizational Structure"
-          title={<>BUILT WITH <span className="text-gold">STRUCTURE.</span><br />DRIVEN BY CREATIVITY.</>}
+          title={<>BUILT WITH STRUCTURE.<br />DRIVEN BY <span className="text-gold">CREATIVITY.</span></>}
           subtitle="Executive leadership and governance oversee five dedicated divisions."
         />
         <OrganizationTree />
