@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import Seo from '../components/ui/Seo.jsx'
 import Reveal from '../components/ui/Reveal.jsx'
 import Img from '../components/ui/Img.jsx'
@@ -218,6 +219,7 @@ function Leadership() {
 }
 
 function About() {
+  const [collaborationOpen, setCollaborationOpen] = useState(false)
   return (
     <>
       <Seo
@@ -248,6 +250,10 @@ function About() {
             project.
           </>
         }
+        secondary={false}
+        inlineForm
+        formOpen={collaborationOpen}
+        onFormToggle={() => setCollaborationOpen((open) => !open)}
       />
     </>
   )

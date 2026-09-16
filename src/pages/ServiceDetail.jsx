@@ -1,4 +1,5 @@
 import { Link, useParams, Navigate } from 'react-router-dom'
+import { useState } from 'react'
 import Seo from '../components/ui/Seo.jsx'
 import Reveal from '../components/ui/Reveal.jsx'
 import Img from '../components/ui/Img.jsx'
@@ -11,6 +12,7 @@ import { PLACEHOLDER } from '../config/site.js'
 
 function ServiceDetail() {
   const { slug } = useParams()
+  const [activeForm, setActiveForm] = useState(null)
   const service = SERVICES.find((item) => item.slug === slug)
   if (!service) return <Navigate to="/services" replace />
   const gallery = [service.image, ...SERVICES.filter((s) => s.slug !== slug).slice(0, 2).map((s) => s.image)]
@@ -68,7 +70,7 @@ function ServiceDetail() {
         <div className="container"><div className="service-other__heading"><SectionHeading eyebrow="06 / Explore" title="OTHER SERVICES" /><p>Move through the wider ATTI VERSE capability system.</p></div><div className="service-other service-other--industrial" style={{ marginTop: '2rem' }}>{SERVICES.filter((s) => s.slug !== slug).map((s, i) => <Reveal key={s.id} dir="up" delay={(i % 3) * 60}><Link to={`/services/${s.slug}`} className="service-other__item"><span>{s.number}</span><div><small>{s.lens}</small><h3>{s.title}</h3><p>{s.summary}</p></div><strong>↗</strong></Link></Reveal>)}</div></div>
       </section>
 
-      <CTASection title="READY TO TALK?" copy={<>Need {service.title.toLowerCase()} for an event, a brand, a campus or a production? Tell us what you&apos;re building — we&apos;ll find the right team and the right approach.</>} />
+      <CTASection title="READY TO TALK?" copy={<>Need {service.title.toLowerCase()} for an event, a brand, a campus or a production? Tell us what you&apos;re building — we&apos;ll find the right team and the right approach.</>} secondary={false} inlineFormOptions={[{ label: 'Join ATTI VERSE', kind: 'Join ATTI VERSE' }, { label: 'Organize an Event', kind: 'Organize an Event' }]} activeForm={activeForm} onFormSelect={setActiveForm} />
     </div>
   )
 }

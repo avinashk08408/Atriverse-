@@ -3,7 +3,7 @@ import Reveal from './Reveal.jsx'
 import Icon from './Icon.jsx'
 import ContactForm from './ContactForm.jsx'
 
-function CTASection({ title = "LET'S CREATE SOMETHING.", copy, primary, secondary, inlineForm, inlineFormKind = 'General Collaboration', formOpen, onFormToggle }) {
+function CTASection({ title = "LET'S CREATE SOMETHING.", copy, primary, secondary, inlineForm, inlineFormKind = 'General Collaboration', inlineFormOptions, activeForm, formOpen, onFormToggle, onFormSelect }) {
   return (
     <section className="cta" aria-label="Call to action">
       <div className="container">
@@ -22,7 +22,9 @@ function CTASection({ title = "LET'S CREATE SOMETHING.", copy, primary, secondar
         )}
         <Reveal dir="up" delay={260}>
           <div className="cta__actions">
-            {inlineForm ? <button type="button" className="btn btn--gold" onClick={onFormToggle} aria-expanded={formOpen}>
+            {inlineFormOptions ? inlineFormOptions.map((option) => <button key={option.kind} type="button" className={`btn ${activeForm === option.kind ? 'btn--gold' : 'btn--outline'}`} onClick={() => onFormSelect(activeForm === option.kind ? null : option.kind)} aria-expanded={activeForm === option.kind}>
+              <span>{activeForm === option.kind ? `CLOSE ${option.label.toUpperCase()} FORM` : option.label}</span><Icon name="arrow-right" size={18} className="btn--icon-arrow" />
+            </button>) : inlineForm ? <button type="button" className="btn btn--gold" onClick={onFormToggle} aria-expanded={formOpen}>
               <span>{formOpen ? 'CLOSE COLLABORATION FORM' : (primary?.label || 'START A COLLABORATION')}</span>
               <Icon name="arrow-right" size={18} className="btn--icon-arrow" />
             </button> : <Link to={primary?.to || '/contact'} className="btn btn--gold">
@@ -36,6 +38,7 @@ function CTASection({ title = "LET'S CREATE SOMETHING.", copy, primary, secondar
             )}
           </div>
         </Reveal>
+        {inlineFormOptions && activeForm && <div className="cta__inline-form"><ContactForm kind={activeForm} compact /></div>}
         {inlineForm && formOpen && <div className="cta__inline-form"><ContactForm kind={inlineFormKind} compact /></div>}
       </div>
     </section>
