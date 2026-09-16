@@ -3957,3 +3957,8 @@
 .service-other .service-other__item h3 { color:var(--gold-soft); }
 .service-other--industrial .service-other__item:hover h3,
 .service-other .service-other__item:hover h3 { color:var(--gold); }
+
+/* Homepage Services only — restore previous title treatment */
+.services-index .services-index__title { color:var(--white); }
+.services-index__row:hover .services-index__title { color:var(--gold-soft); }
+.services-index .services-index__caps { color:var(--text-faint); }
