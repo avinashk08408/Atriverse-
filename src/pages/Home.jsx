@@ -9,7 +9,6 @@ import CTASection from '../components/ui/CTASection.jsx'
 import EventCard from '../components/cards/EventCard.jsx'
 import WhyAttii from '../components/sections/WhyAttii.jsx'
 import ServicesIndex from '../components/sections/ServicesIndex.jsx'
-import ProductionShowcase from '../components/sections/ProductionShowcase.jsx'
 import { IMAGES } from '../config/images.js'
 import { SITE } from '../config/site.js'
 import { FEATURED_EVENTS, EVENT_PLACEHOLDERS } from '../data/events.js'
@@ -413,7 +412,6 @@ function Home() {
       <ServicesIndex />
       <FeaturedWork />
       <FeaturedEvents />
-      <ProductionShowcase />
       <TeamPreview />
       <Milestones />
       <CTASection
