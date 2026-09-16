@@ -334,44 +334,40 @@ function Milestones() {
 
 function TeamPreview() {
   return (
-    <section className="section">
+    <section className="section section--dark team-spotlight">
       <div className="container">
-        <div className="team-equal">
-          <div className="team-equal__head">
-            <div className="section-head-row">
-              <Reveal dir="up">
-                <span className="eyebrow">Leadership</span>
-                <h2 className="section-title" style={{ marginTop: '1.1rem', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)' }}>
-                  THE PEOPLE<br />
-                  <span className="text-gold">BEHIND THE VERSE.</span>
-                </h2>
-              </Reveal>
-              <Reveal dir="up" delay={100}>
-                <Link to="/team" className="text-link" style={{ alignItems: 'center' }}>
-                  Meet Our Team →
-                </Link>
-              </Reveal>
+        <div className="team-spotlight__header">
+          <Reveal dir="up">
+            <div className="team-spotlight__label"><span>04 / Leadership</span><span>THE ATTI VERSE COUNCIL</span></div>
+            <h2 className="team-spotlight__title">THE PEOPLE<br /><span className="text-gold">BEHIND THE VERSE.</span></h2>
+          </Reveal>
+          <Reveal dir="up" delay={120}>
+            <div className="team-spotlight__intro">
+              <p>Four perspectives. One direction. Meet the people shaping the vision, operations, growth and experiences behind ATTI VERSE.</p>
+              <Link to="/team" className="text-link text-link--dark">Meet Our Team →</Link>
             </div>
-          </div>
+          </Reveal>
+        </div>
 
-          <div className="team-equal__grid" style={{ marginTop: '2.5rem' }}>
-            {LEADERSHIP.map((member, i) => (
-              <Reveal key={member.id} dir="up" delay={i * 90}>
-                <article className="team-equal__card">
-                  <div className="team-equal__media">
-                    <Img src={member.image} alt={member.name} />
+        <div className="team-spotlight__grid">
+          {LEADERSHIP.map((member, i) => (
+            <Reveal key={member.id} dir="up" delay={i * 90}>
+              <article className={`team-spotlight__card ${i === 0 ? 'team-spotlight__card--feature' : ''}`}>
+                <div className="team-spotlight__media">
+                  <Img src={member.image} alt={member.name} />
+                  <span className="team-spotlight__index">0{i + 1}</span>
+                </div>
+                <div className="team-spotlight__info">
+                  <div>
+                    <h3>{member.name}</h3>
+                    <p className="team-spotlight__role">{member.role}</p>
                   </div>
-                  <div className="team-equal__info">
-                    <h3 className="team-equal__name">{member.name}</h3>
-                    <p className="team-equal__role">{member.role}</p>
-                    {member.designation && (
-                      <p className="team-equal__designation">{member.designation}</p>
-                    )}
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
+                  <span className="team-spotlight__arrow">↗</span>
+                </div>
+                {i === 0 && <p className="team-spotlight__focus">{member.focus}</p>}
+              </article>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
