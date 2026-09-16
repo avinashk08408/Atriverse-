@@ -230,7 +230,7 @@
 
 .press-gallery__panel {
   position: relative;
-  width: min(100%, 720px);
+  width: min(96vw, 1120px);
   max-height: 90vh;
   overflow: auto;
   padding: clamp(1.5rem, 4vw, 3rem);
@@ -267,14 +267,22 @@
 }
 
 .press-gallery__image {
-  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  min-height: min(58vh, 620px);
+  max-height: 68vh;
   margin-top: 1.5rem;
   overflow: hidden;
   border: 1px solid var(--gold-line);
+  background: var(--emerald-black);
 }
 
 .press-gallery__image .img,
 .press-gallery__image .img__el { width: 100%; height: 100%; }
+
+.press-gallery__image .img__el {
+  object-fit: contain;
+}
 .press-gallery__panel > small { display: block; margin-top: 0.75rem; color: var(--text-faint); font-size: 0.7rem; }
 
 @media (max-width: 800px) {
