@@ -62,3 +62,11 @@
 @media (prefers-reduced-motion: reduce) {
   .cta__inline-form { animation: none; }
 }
+
+/* Footer contact directory and social status. */
+.footer__contact-link { display:flex; align-items:flex-start; gap:.6rem; color:var(--text-muted); font-size:.78rem; line-height:1.45; }
+.footer__contact-link svg { flex:0 0 auto; margin-top:.15rem; color:var(--gold); }
+.footer__contact-link span { display:flex; flex-direction:column; }
+.footer__contact-link strong { color:var(--gold-soft); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; }
+.footer__social--disabled { cursor:default; opacity:.55; }
+.footer__social--disabled:hover { color:var(--gold-soft); background:transparent; transform:none; }

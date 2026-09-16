@@ -1,14 +1,19 @@
 import { Link } from 'react-router-dom'
-import { NAV_LINKS, SITE, SOCIAL, CONTACT_PUBLISHED, FOOTER_EXTRA_LINKS } from '../../config/site.js'
+import { NAV_LINKS, SITE, SOCIAL, FOOTER_EXTRA_LINKS } from '../../config/site.js'
 import Icon from '../ui/Icon.jsx'
 
 const isReadyUrl = (href) => typeof href === 'string' && /\bhttps?:\/\//i.test(href) && !/(YOUR_)|(INSTAGRAM_URL)|(YOUTUBE_URL)|(LINKEDIN_URL)|PLACEHOLDER/i.test(href)
 
 const socials = [
   { label: 'Instagram', href: SOCIAL.instagram, icon: 'instagram' },
-  { label: 'YouTube', href: SOCIAL.youtube, icon: 'youtube' },
-  { label: 'LinkedIn', href: SOCIAL.linkedin, icon: 'linkedin' },
 ].filter((s) => isReadyUrl(s.href))
+
+const CONTACTS = [
+  ['Rahul R S', '+91 80862 80307'],
+  ['Tamilselvan', '+91 86105 04708'],
+  ['Siva', '+91 63831 48233'],
+  ['Harish', '+91 94888 74853'],
+]
 
 function Footer() {
   const year = new Date().getFullYear()
@@ -41,6 +46,12 @@ function Footer() {
                   <Icon name={s.icon} size={18} />
                 </a>
               ))}
+              <a className="footer__social" href={`mailto:${SITE.email}`} aria-label="Email ATTI VERSE">
+                <Icon name="mail" size={18} />
+              </a>
+              <span className="footer__social footer__social--disabled" aria-label="YouTube channel coming soon" title="YouTube channel coming soon">
+                <Icon name="youtube" size={18} />
+              </span>
             </div>
           </div>
 
@@ -73,23 +84,9 @@ function Footer() {
           <div>
             <h3 className="footer__heading">Get in Touch</h3>
             <ul className="footer__contact">
-              {CONTACT_PUBLISHED ? (
-                <>
-                  <li>
-                    <a href={`mailto:${SITE.email}`} className="footer__link">
-                      {SITE.email}
-                    </a>
-                  </li>
-                  <li>
-                    <a href={`tel:${SITE.phone.replace(/\s/g, '')}`} className="footer__link">
-                      {SITE.phone}
-                    </a>
-                  </li>
-                  {SITE.address && <li>{SITE.address}</li>}
-                </>
-              ) : (
-                <li className="footer__link">Contact details coming soon.</li>
-              )}
+              {CONTACTS.map(([name, number]) => <li key={name}><a href={`tel:${number.replace(/\s/g, '')}`} className="footer__contact-link"><Icon name="phone" size={14} /><span><strong>{name}</strong>{number}</span></a></li>)}
+              <li><a href={`mailto:${SITE.email}`} className="footer__contact-link"><Icon name="mail" size={14} /><span>{SITE.email}</span></a></li>
+              <li><span className="footer__contact-link"><Icon name="location" size={14} /><span>{SITE.address}</span></span></li>
             </ul>
           </div>
         </div>

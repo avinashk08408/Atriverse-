@@ -15,9 +15,9 @@ export const SITE = {
   description:
     'A creative entertainment and production organization bringing together talent, creativity, media and event experiences under one platform.',
   year: 2026,
-  email: '', // e.g. 'hello@attiverse.in'
-  phone: '', // e.g. '+91 90000 00000'
-  address: '', // e.g. 'Chennai, Tamil Nadu, India'
+  email: 'attiiverseofficial@gmail.com',
+  phone: '+91 80862 80307',
+  address: 'Chennai, Tamil Nadu',
   url: 'https://mohan-10-15.github.io/atti-verse/',
 }
 
@@ -38,8 +38,8 @@ export const PLACEHOLDER = {
 }
 
 export const SOCIAL = {
-  instagram: 'INSTAGRAM_URL', // TODO: replace with real profile
-  youtube: 'YOUTUBE_URL', // TODO: replace with real channel
+  instagram: 'https://www.instagram.com/attiiverseofficial?stkn=djNndHEzdnh6ZHBh',
+  youtube: '', // Channel coming soon
   linkedin: 'LINKEDIN_URL', // TODO: replace with real profile
 }
 
