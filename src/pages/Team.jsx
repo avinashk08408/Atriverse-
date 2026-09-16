@@ -2,51 +2,38 @@ import Seo from '../components/ui/Seo.jsx'
 import Reveal from '../components/ui/Reveal.jsx'
 import SectionHeading from '../components/ui/SectionHeading.jsx'
 import PageHeader from '../components/ui/PageHeader.jsx'
-import TeamCard from '../components/cards/TeamCard.jsx'
+import Img from '../components/ui/Img.jsx'
 import CTASection from '../components/ui/CTASection.jsx'
 import { LEADERSHIP, TEAM_CATEGORIES } from '../data/team.js'
 import { PLACEHOLDER } from '../config/site.js'
 
 function Leadership() {
   return (
-    <section className="section">
+    <section className="section team-page-leadership">
       <div className="container">
         <SectionHeading
-          center
           eyebrow="Leadership"
-          title="THE DIRECTION OF THE VERSE"
-          subtitle="Every performance, production and event is powered by people who bring their own talent, creativity and commitment."
+          title={<>THE DIRECTION<br /><span className="text-gold">OF THE VERSE.</span></>}
+          subtitle="Four leaders. One operating vision. The people responsible for turning creative ambition into a functioning organization."
         />
-        <div className="grid-4">
+        <div className="founder-list">
           {LEADERSHIP.map((member, i) => (
-            <TeamCard key={member.id} member={member} index={i} />
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function Responsibilities() {
-  return (
-    <section className="section section--off-white">
-      <div className="container">
-        <SectionHeading center eyebrow="Leadership Roles" title="WHAT OUR LEADERS OWN" />
-        <div className="grid-4">
-          {LEADERSHIP.map((member, i) => (
-            <Reveal key={member.id} dir="up" delay={(i % 4) * 90}>
-              <article className="milestone-card" style={{ minHeight: '100%' }}>
-                <h3 className="milestone-card__title">{member.name}</h3>
-                <p className="milestone-card__note" style={{ color: 'var(--gold)', fontWeight: 700 }}>
-                  {member.role}
-                </p>
-                <ul className="check-list" style={{ marginTop: '0.9rem', gridTemplateColumns: '1fr' }}>
-                  {member.responsibilities.map((r) => (
-                    <li key={r} style={{ fontSize: '0.85rem' }}>
-                      {r}
-                    </li>
-                  ))}
-                </ul>
+            <Reveal key={member.id} dir={i % 2 === 0 ? 'right' : 'left'} delay={i * 90}>
+              <article className="founder-row">
+                <div className="founder-row__media">
+                  <Img src={member.image} alt={`${member.name} — ${member.role}`} />
+                  <span className="founder-row__index">0{i + 1}</span>
+                </div>
+                <div className="founder-row__content">
+                  <div className="founder-row__meta"><span>ATTI VERSE / LEADERSHIP</span><span>0{i + 1} — 04</span></div>
+                  <h2>{member.name}</h2>
+                  <p className="founder-row__role">{member.role}</p>
+                  {member.designation && <p className="founder-row__designation">{member.designation}</p>}
+                  <p className="founder-row__focus">{member.focus}</p>
+                  <div className="founder-row__responsibilities">
+                    {member.responsibilities.slice(0, 4).map((responsibility) => <span key={responsibility}>{responsibility}</span>)}
+                  </div>
+                </div>
               </article>
             </Reveal>
           ))}
@@ -58,33 +45,24 @@ function Responsibilities() {
 
 function Categories() {
   return (
-    <section className="section">
+    <section className="section section--dark team-roles">
       <div className="container">
         <SectionHeading
-          center
           eyebrow="The Collective"
-          title="ROLES ACROSS THE VERSE"
-          subtitle="Member cards below are placeholders — photos and profiles will be added as the team is documented."
+          title={<>ROLES ACROSS<br /><span className="text-gold">THE VERSE.</span></>}
+          subtitle="A scalable operating structure for the talent, craft and production disciplines that make every ATTI VERSE experience possible."
         />
-        <div className="grid-3" style={{ rowGap: '2.5rem' }}>
+        <div className="roles-directory">
           {TEAM_CATEGORIES.map((cat, ci) => (
-            <Reveal key={cat.id} dir="up" delay={ci * 80}>
-              <div>
-                <div style={{ marginBottom: '1.2rem' }}>
-                  <h3 className="card-title">{cat.title}</h3>
-                  <p className="feature__tagline" style={{ fontSize: '0.86rem' }}>
-                    {cat.subtitle}
-                  </p>
+            <Reveal key={cat.id} dir="up" delay={ci * 70}>
+              <article className="role-directory-row">
+                <span className="role-directory-row__index">0{ci + 1}</span>
+                <div className="role-directory-row__title"><h3>{cat.title}</h3><p>{cat.subtitle}</p></div>
+                <div className="role-directory-row__roles">
+                  {cat.placeholderRoles.map((role) => <span key={role}>{role}</span>)}
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-                  {cat.placeholderRoles.map((role) => (
-                    <div key={role} className="cat-card">
-                      <span className="cat-card__role">{role}</span>
-                      <span className="cat-card__note">{PLACEHOLDER.tba} — profile coming soon.</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+                <span className="role-directory-row__status">{PLACEHOLDER.tba}</span>
+              </article>
             </Reveal>
           ))}
         </div>
@@ -108,7 +86,6 @@ function Team() {
         subtitle="Every performance, production and event is powered by people who bring their own talent, creativity and commitment."
       />
       <Leadership />
-      <Responsibilities />
       <Categories />
       <CTASection
         copy={

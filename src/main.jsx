@@ -9,6 +9,7 @@ import './styles/refinements.css'
 import './styles/event-refinements.css'
 import './styles/team-refinements.css'
 import './styles/scroll-refinements.css'
+import './styles/team-page-refinements.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
