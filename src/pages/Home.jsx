@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Seo from '../components/ui/Seo.jsx'
 import Reveal from '../components/ui/Reveal.jsx'
@@ -225,29 +225,55 @@ function FeaturedWork() {
 }
 
 function FeaturedEvents() {
-  const events = [...FEATURED_EVENTS, ...EVENT_PLACEHOLDERS].slice(0, 3)
+  const events = [...FEATURED_EVENTS, ...EVENT_PLACEHOLDERS]
+  const stripRef = useRef(null)
+  const step = () => {
+    const item = stripRef.current?.querySelector('.event-strip__item')
+    return item ? item.clientWidth + 24 : 760
+  }
+  const scrollByStep = (direction) => {
+    stripRef.current?.scrollBy({ left: direction * step(), behavior: 'smooth' })
+  }
+  const onWheel = (event) => {
+    const strip = stripRef.current
+    if (!strip || strip.scrollWidth <= strip.clientWidth + 1) return
+    if (Math.abs(event.deltaY) < Math.abs(event.deltaX)) return
+    event.preventDefault()
+    strip.scrollLeft += event.deltaY
+  }
+
   return (
     <section className="section section--dark home-events">
       <div className="container">
-        <div className="section-head-row">
-          <div className="section-head" style={{ marginBottom: 0 }}>
-            <span className="eyebrow" style={{ color: 'var(--gold-soft)' }}>
-              Events
-            </span>
+        <div className="event-showcase__head">
+          <div>
+            <span className="eyebrow" style={{ color: 'var(--gold-soft)' }}>Events</span>
             <h2 className="section-title section-head__title">MOMENTS WE'VE CREATED</h2>
           </div>
           <Reveal dir="up" delay={150}>
-            <Link to="/events#srm-pongal-vizha-2026" className="text-link text-link--dark">
-              View All Events →
-            </Link>
+            <div className="event-showcase__actions">
+              <div className="event-showcase__nav" aria-label="Browse events">
+                <button type="button" className="event-showcase__arrow" aria-label="Previous event" onClick={() => scrollByStep(-1)}>
+                  <Icon name="arrow-left" size={18} />
+                </button>
+                <button type="button" className="event-showcase__arrow" aria-label="Next event" onClick={() => scrollByStep(1)}>
+                  <Icon name="arrow-right" size={18} />
+                </button>
+              </div>
+              <Link to="/events#srm-pongal-vizha-2026" className="text-link text-link--dark">View All Events →</Link>
+            </div>
           </Reveal>
         </div>
-        <div className="grid-3" style={{ marginTop: '2.5rem' }}>
-          {events.map((event, i) => (
-            <EventCard key={event.id} event={event} index={i} />
-          ))}
-        </div>
+        <p className="event-showcase__intro">One event at a time — scroll, explore, and move through the moments we are building.</p>
       </div>
+      <div className="event-strip" ref={stripRef} onWheel={onWheel} aria-label="Events showcase">
+        {events.map((event, i) => (
+          <article key={event.id} className="event-strip__item">
+            <EventCard event={event} index={i} />
+          </article>
+        ))}
+      </div>
+      <p className="event-showcase__hint">SCROLL OR USE THE ARROWS TO EXPLORE →</p>
     </section>
   )
 }
