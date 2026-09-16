@@ -11,7 +11,6 @@ import EventCard from '../components/cards/EventCard.jsx'
 import WhyAttii from '../components/sections/WhyAttii.jsx'
 import ServicesIndex from '../components/sections/ServicesIndex.jsx'
 import ProductionShowcase from '../components/sections/ProductionShowcase.jsx'
-import TalentSection from '../components/sections/TalentSection.jsx'
 import InstitutionalCTA from '../components/sections/InstitutionalCTA.jsx'
 import { IMAGES } from '../config/images.js'
 import { SITE } from '../config/site.js'
@@ -399,7 +398,6 @@ function Home() {
       <FeaturedWork />
       <FeaturedEvents />
       <ProductionShowcase />
-      <TalentSection />
       <TeamPreview />
       <Milestones />
       <Testimonials />
