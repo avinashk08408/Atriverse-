@@ -130,9 +130,6 @@ function EventDetail() {
 
           <Reveal dir="up" delay={200}>
             <div className="event-card__cta" style={{ marginTop: '2rem', display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-              <Link to="/achievements" className="btn btn--emerald">
-                <span>See Milestones</span>
-              </Link>
               <Link to="/gallery" className="btn btn--outline">
                 <span>Open Gallery</span>
               </Link>
