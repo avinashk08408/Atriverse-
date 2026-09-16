@@ -1,0 +1,59 @@
+/* Focused About page corrections requested for story heading and mission list. */
+.about-story > .container > .section-head {
+  max-width: 720px;
+  margin-right: auto;
+  margin-left: 0;
+  text-align: left;
+}
+
+.about-story > .container > .section-head .section-head__title {
+  max-width: 15ch;
+  font-size: clamp(2.2rem, 4.8vw, 4rem);
+  line-height: 1;
+}
+
+.about-mission__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 3rem;
+  margin-top: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.about-mission__list .mission-num__item {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: start;
+  gap: 1rem;
+  padding: 1.15rem 0;
+  border: 0;
+  border-top: 1px solid var(--gold-line);
+  background: transparent;
+  transition: border-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.about-mission__list .mission-num__item:hover {
+  transform: none;
+  border-color: var(--gold);
+  background: transparent;
+  padding-left: 0.55rem;
+}
+
+.about-mission__list .mission-num__num {
+  color: var(--gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+}
+
+.about-mission__list .mission-num__text {
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  .about-mission__list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

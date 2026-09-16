@@ -95,7 +95,7 @@ function OurStory() {
   return (
     <section className="section section--off-white">
       <div className="container">
-        <SectionHeading center eyebrow="Our Story" title="THE JOURNEY OF THE VERSE" />
+        <SectionHeading eyebrow="Our Story" title={<>THE JOURNEY OF THE <span className="text-gold">VERSE.</span></>} />
         <div className="timeline" style={{ marginTop: '3rem' }}>
           {TIMELINE.map((item, i) => (
             <Reveal key={item.title} dir="up" delay={i * 60}>
@@ -147,7 +147,7 @@ function Mission() {
           <SectionHeading eyebrow="Mission / Operating Commitments" title="WHAT WE ARE BUILT TO DO" />
           <p>Eight operating principles translate the ATTI VERSE vision into consistent creative work.</p>
         </div>
-        <div className="mission-num about-mission__grid">
+        <div className="mission-num about-mission__grid about-mission__list">
           {MISSION_ITEMS.map((text, i) => (
             <Reveal key={text} dir="up" delay={(i % 2) * 80}>
               <article className="mission-num__item">
