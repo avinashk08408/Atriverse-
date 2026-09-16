@@ -3951,3 +3951,9 @@
 .service-other--industrial .service-other__body h3 { color:var(--gold-soft); }
 .service-other--industrial .service-other__body small,
 .service-other--industrial .service-other__body p { color:var(--text-muted); }
+
+/* Ensure Other Services titles are gold even when rendered without a body class */
+.service-other--industrial .service-other__item h3,
+.service-other .service-other__item h3 { color:var(--gold-soft); }
+.service-other--industrial .service-other__item:hover h3,
+.service-other .service-other__item:hover h3 { color:var(--gold); }
