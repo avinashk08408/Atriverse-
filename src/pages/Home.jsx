@@ -227,7 +227,7 @@ function FeaturedWork() {
 function FeaturedEvents() {
   const events = [...FEATURED_EVENTS, ...EVENT_PLACEHOLDERS].slice(0, 3)
   return (
-    <section className="section section--dark">
+    <section className="section section--dark home-events">
       <div className="container">
         <div className="section-head-row">
           <div className="section-head" style={{ marginBottom: 0 }}>
