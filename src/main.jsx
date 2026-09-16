@@ -15,6 +15,7 @@ import './styles/milestones-newsroom.css'
 import './styles/event-detail-refinements.css'
 import './styles/work-showcase-refinements.css'
 import './styles/contact-forms-refinements.css'
+import './styles/upcoming-editorial.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
