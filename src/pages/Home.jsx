@@ -6,12 +6,10 @@ import Img from '../components/ui/Img.jsx'
 import Icon from '../components/ui/Icon.jsx'
 import SectionHeading from '../components/ui/SectionHeading.jsx'
 import CTASection from '../components/ui/CTASection.jsx'
-import Testimonials from '../components/ui/Testimonials.jsx'
 import EventCard from '../components/cards/EventCard.jsx'
 import WhyAttii from '../components/sections/WhyAttii.jsx'
 import ServicesIndex from '../components/sections/ServicesIndex.jsx'
 import ProductionShowcase from '../components/sections/ProductionShowcase.jsx'
-import InstitutionalCTA from '../components/sections/InstitutionalCTA.jsx'
 import { IMAGES } from '../config/images.js'
 import { SITE } from '../config/site.js'
 import { FEATURED_EVENTS, EVENT_PLACEHOLDERS } from '../data/events.js'
@@ -400,8 +398,6 @@ function Home() {
       <ProductionShowcase />
       <TeamPreview />
       <Milestones />
-      <Testimonials />
-      <InstitutionalCTA />
       <CTASection
         title="LET'S CREATE SOMETHING WORTH REMEMBERING."
         copy={
