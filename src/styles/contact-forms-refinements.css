@@ -86,3 +86,10 @@
 .hero__inline-form .contact-form { padding:1rem; background:rgba(7,13,13,.85); backdrop-filter:blur(10px); }
 .hero__inline-form .contact-form__submit { width:auto; min-height:42px; margin-top:.8rem; padding:.65rem 1rem; }
 @media(max-width:560px) { .hero__inline-form { width:100%; } }
+
+.nav__form-panel { position:fixed; z-index:100; top:calc(var(--nav-height, 78px) + .75rem); right:max(1rem, calc((100vw - var(--container, 1240px)) / 2)); width:min(640px, calc(100vw - 2rem)); max-height:calc(100vh - var(--nav-height, 78px) - 1.5rem); overflow:auto; padding:.75rem; border:1px solid var(--gold-line); background:rgba(7,13,13,.97); box-shadow:0 18px 50px rgba(0,0,0,.35); animation:collaborationFormIn .35s var(--ease-out) both; }
+.nav__form-heading { display:flex; align-items:center; justify-content:space-between; padding:.35rem .35rem .7rem; color:var(--gold-soft); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; }
+.nav__form-heading button { border:0; background:transparent; color:var(--ink); font-size:1.35rem; line-height:1; cursor:pointer; }
+.nav__form-panel .contact-form { background:rgba(255,255,255,.025); }
+@media(max-width:1080px) { .nav__form-panel { top:1rem; right:1rem; } }
+@media(max-width:560px) { .nav__form-panel { top:.75rem; right:.75rem; width:calc(100vw - 1.5rem); max-height:calc(100vh - 1.5rem); } }

@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { NAV_LINKS } from '../../config/site.js'
+import ContactForm from '../ui/ContactForm.jsx'
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const [workFormOpen, setWorkFormOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -16,6 +18,7 @@ function Navbar() {
 
   useEffect(() => {
     setOpen(false)
+    setWorkFormOpen(false)
   }, [location.pathname])
 
   useEffect(() => {
@@ -78,9 +81,9 @@ function Navbar() {
             ))}
           </nav>
 
-          <Link to="/contact" className="btn btn--gold nav__cta">
-            <span>Work With Us</span>
-          </Link>
+          <button type="button" className="btn btn--gold nav__cta" onClick={() => setWorkFormOpen((value) => !value)} aria-expanded={workFormOpen}>
+            <span>{workFormOpen ? 'Close Form' : 'Work With Us'}</span>
+          </button>
 
           <button
             type="button"
@@ -95,6 +98,16 @@ function Navbar() {
           </button>
         </div>
       </header>
+
+      {workFormOpen && (
+        <div className="nav__form-panel">
+          <div className="nav__form-heading">
+            <span>Join ATTI VERSE</span>
+            <button type="button" aria-label="Close Join ATTI VERSE form" onClick={() => setWorkFormOpen(false)}>×</button>
+          </div>
+          <ContactForm kind="Join ATTI VERSE" compact />
+        </div>
+      )}
 
       <div className={`mobile-menu ${open ? 'is-open' : ''}`} aria-hidden={!open}>
         <nav aria-label="Mobile">
@@ -114,9 +127,9 @@ function Navbar() {
             ))}
           </ul>
         </nav>
-        <Link to="/contact" className="btn btn--gold mobile-menu__cta">
-          <span>Work With Us</span>
-        </Link>
+        <button type="button" className="btn btn--gold mobile-menu__cta" onClick={() => { setWorkFormOpen((value) => !value); setOpen(false) }} aria-expanded={workFormOpen}>
+          <span>{workFormOpen ? 'Close Form' : 'Work With Us'}</span>
+        </button>
       </div>
     </>
   )

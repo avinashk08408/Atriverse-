@@ -23,7 +23,6 @@ function ContactForm({ kind = 'General Collaboration', compact = false }) {
           { name: 'eventName', label: 'Event name', placeholder: 'Name of the event', type: 'text', required: true },
           { name: 'eventDate', label: 'Preferred event date', type: 'date' },
           { name: 'guestCount', label: 'Expected audience', placeholder: 'Approximate guest count', type: 'text' },
-          ...COMMON_FIELDS,
         ]
       : [
           { name: 'name', label: 'Name', placeholder: 'Your name', type: 'text', required: true },
