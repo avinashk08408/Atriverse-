@@ -190,7 +190,7 @@ function FeaturedWork() {
         <div className="work-index__projects">
           {featured.map((project, i) => (
             <Reveal key={project.id} dir="up" delay={i * 90}>
-              <Link to={`/work/${project.id}`} className="work-project-spread">
+              <Link to={`/work/${project.id}`} className={`work-project-spread ${i % 2 ? 'work-project-spread--reverse' : ''}`}>
                 <div className="work-project-spread__media"><Img src={project.image} alt={`${project.title} — ${project.category}`} /></div>
                 <div className="work-project-spread__copy"><span className="work-project-spread__number">0{i + 1}</span><div className="work-index__meta"><span>{project.category}</span><span>{project.year}</span></div><h3>{project.title}</h3><p>{project.description}</p><span className="work-index__link">View the work <b>↗</b></span></div>
               </Link>
