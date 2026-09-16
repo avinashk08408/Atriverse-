@@ -1,0 +1,96 @@
+/* SRM Pongal detail page: archive-style hero slideshow and focused visuals. */
+.event-hero-slideshow {
+  width: min(100% - 2rem, 1180px);
+  margin: clamp(1.5rem, 4vw, 3rem) auto 0;
+  padding: 1rem;
+  border: 1px solid var(--gold-line);
+  background: var(--emerald-deep);
+}
+
+.event-hero-slideshow__image {
+  position: relative;
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
+  background: var(--emerald-black);
+}
+
+.event-hero-slideshow__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(7, 13, 13, 0.7));
+  pointer-events: none;
+}
+
+.event-hero-slideshow__image .img,
+.event-hero-slideshow__image .img__el { width: 100%; height: 100%; }
+
+.event-hero-slideshow__image .img__el {
+  animation: eventHeroPhotoIn 0.9s var(--ease-out) both;
+}
+
+.event-hero-slideshow__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.85rem;
+  color: var(--gold-soft);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.event-hero-slideshow__dots {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+}
+
+.event-hero-slideshow__dots i {
+  width: 24px;
+  height: 2px;
+  background: var(--text-faint);
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.event-hero-slideshow__dots i.is-active {
+  width: 48px;
+  background: var(--gold);
+}
+
+.event-featured-visuals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.event-featured-visuals__item {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid var(--gold-line);
+  background: var(--emerald-deep);
+}
+
+.event-featured-visuals__item .img,
+.event-featured-visuals__item .img__el { width: 100%; height: 100%; }
+
+.event-featured-visuals__item .img__el {
+  transition: transform 0.7s var(--ease-out);
+}
+
+.event-featured-visuals__item:hover .img__el { transform: scale(1.04); }
+
+@keyframes eventHeroPhotoIn {
+  from { opacity: 0; transform: scale(1.04); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 640px) {
+  .event-hero-slideshow { width: min(100% - 1.25rem, 1180px); padding: 0.6rem; }
+  .event-hero-slideshow__image { aspect-ratio: 4 / 3; }
+  .event-featured-visuals { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .event-hero-slideshow__image .img__el { animation: none; }
+}
