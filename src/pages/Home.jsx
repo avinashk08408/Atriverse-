@@ -131,7 +131,7 @@ function BrandIntro() {
             <Reveal dir="up">
               <span className="eyebrow">Who We Are</span>
               <h2 className="section-title about-home__title">
-                A growing universe of <span className="text-gold">talent, creativity</span> and production.
+                A growing universe of <span className="text-gold">talent, creativity</span> and <span className="text-gold">production</span>.
               </h2>
             </Reveal>
             <Reveal dir="up" delay={120}>
