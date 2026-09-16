@@ -4,6 +4,7 @@ import Seo from '../components/ui/Seo.jsx'
 import Reveal from '../components/ui/Reveal.jsx'
 import Img from '../components/ui/Img.jsx'
 import Icon from '../components/ui/Icon.jsx'
+import ContactForm from '../components/ui/ContactForm.jsx'
 import SectionHeading from '../components/ui/SectionHeading.jsx'
 import CTASection from '../components/ui/CTASection.jsx'
 import EventCard from '../components/cards/EventCard.jsx'
@@ -403,6 +404,12 @@ function Home() {
       <FeaturedEvents />
       <TeamPreview />
       <Milestones />
+      <section className="section home-contact-section">
+        <div className="container home-contact-section__grid">
+          <Reveal dir="up"><span className="eyebrow">General Collaboration</span><h2 className="section-title">LET’S MAKE <span className="text-gold">SOMETHING.</span></h2><p>Have an idea, partnership or creative brief? Tell us where you want to go.</p></Reveal>
+          <Reveal dir="left" delay={120}><ContactForm kind="General Collaboration" compact /></Reveal>
+        </div>
+      </section>
       <CTASection
         title="LET'S CREATE SOMETHING WORTH REMEMBERING."
         copy={
