@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 import Reveal from './Reveal.jsx'
 import Icon from './Icon.jsx'
+import ContactForm from './ContactForm.jsx'
 
-function CTASection({ title = "LET'S CREATE SOMETHING.", copy, primary, secondary }) {
+function CTASection({ title = "LET'S CREATE SOMETHING.", copy, primary, secondary, inlineForm, formOpen, onFormToggle }) {
   return (
     <section className="cta" aria-label="Call to action">
       <div className="container">
@@ -21,10 +22,13 @@ function CTASection({ title = "LET'S CREATE SOMETHING.", copy, primary, secondar
         )}
         <Reveal dir="up" delay={260}>
           <div className="cta__actions">
-            <Link to={primary?.to || '/contact'} className="btn btn--gold">
+            {inlineForm ? <button type="button" className="btn btn--gold" onClick={onFormToggle} aria-expanded={formOpen}>
+              <span>{formOpen ? 'CLOSE COLLABORATION FORM' : (primary?.label || 'START A COLLABORATION')}</span>
+              <Icon name="arrow-right" size={18} className="btn--icon-arrow" />
+            </button> : <Link to={primary?.to || '/contact'} className="btn btn--gold">
               <span>{primary?.label || 'START A COLLABORATION'}</span>
               <Icon name="arrow-right" size={18} className="btn--icon-arrow" />
-            </Link>
+            </Link>}
             {secondary !== false && (
               <Link to="/contact" className="btn btn--outline">
                 <span>CONTACT US</span>
@@ -32,6 +36,7 @@ function CTASection({ title = "LET'S CREATE SOMETHING.", copy, primary, secondar
             )}
           </div>
         </Reveal>
+        {inlineForm && formOpen && <div className="cta__inline-form"><ContactForm kind="General Collaboration" compact /></div>}
       </div>
     </section>
   )
