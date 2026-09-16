@@ -12,7 +12,6 @@ import WhyAttii from '../components/sections/WhyAttii.jsx'
 import ServicesIndex from '../components/sections/ServicesIndex.jsx'
 import ProductionShowcase from '../components/sections/ProductionShowcase.jsx'
 import TalentSection from '../components/sections/TalentSection.jsx'
-import OrganizationTree from '../components/sections/OrganizationTree.jsx'
 import FutureDirection from '../components/sections/FutureDirection.jsx'
 import InstitutionalCTA from '../components/sections/InstitutionalCTA.jsx'
 import { IMAGES } from '../config/images.js'
@@ -278,22 +277,6 @@ function FeaturedEvents() {
   )
 }
 
-function StructureSection() {
-  return (
-    <section className="section section--light-green">
-      <div className="container">
-        <SectionHeading
-          center
-          eyebrow="Organizational Structure"
-          title={<>BUILT WITH STRUCTURE.<br /><span className="text-gold">DRIVEN BY CREATIVITY.</span></>}
-          subtitle="Five divisions, one direction — a professional foundation underneath every creative output."
-        />
-        <OrganizationTree />
-      </div>
-    </section>
-  )
-}
-
 function Milestones() {
   return (
     <section className="section">
@@ -418,7 +401,6 @@ function Home() {
       <FeaturedEvents />
       <ProductionShowcase />
       <TalentSection />
-      <StructureSection />
       <TeamPreview />
       <Milestones />
       <FutureDirection />
