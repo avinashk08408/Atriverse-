@@ -175,39 +175,41 @@ function BrandIntro() {
 function FeaturedWork() {
   const featured = WORK.filter((w) => w.featured)
   const lead = featured[0]
-  const supporting = featured.slice(1, 4)
+  const projects = featured.slice(1, 4)
   return (
-    <section className="section work-showcase">
+    <section className="section work-index">
       <div className="container">
-        <div className="work-showcase__header">
+        <div className="work-index__header">
           <Reveal dir="up">
-            <span className="eyebrow">Selected Work / Portfolio</span>
-            <h2 className="section-title">WORK BUILT FOR <span className="text-gold">IMPACT.</span></h2>
+            <span className="eyebrow">Selected Work / Studio Record</span>
+            <h2 className="section-title">IDEAS, MADE <span className="text-gold">VISIBLE.</span></h2>
           </Reveal>
           <Reveal dir="left" delay={100}>
-            <div className="work-showcase__header-side"><p>Selected engagements across entertainment, events, production and creative direction.</p><Link to="/work" className="btn btn--outline">View All Work <span>↗</span></Link></div>
+            <div className="work-index__header-side"><p>We bring together performance, production, events and visual craft to turn a brief into an experience people remember.</p><Link to="/work" className="text-link">View the full studio record <span>↗</span></Link></div>
           </Reveal>
         </div>
-        <div className="work-showcase__rule" />
-        <div className="work-showcase__layout">
+        <div className="work-index__rule" />
+        <div className="work-index__lead">
           <Reveal dir="right">
-            <Link to="/work" className="work-case work-case--lead">
-              <div className="work-case__media"><Img src={lead.image} alt={`${lead.title} — ${lead.category}`} /></div>
-              <div className="work-case__body"><div className="work-case__meta"><span>01 / Featured case</span><span>{lead.category} · {lead.year}</span></div><h3>{lead.title}</h3><p>{lead.description}</p><span className="work-case__link">Explore project <b>↗</b></span></div>
+            <Link to="/work" className="work-lead">
+              <div className="work-lead__media"><Img src={lead.image} alt={`${lead.title} — ${lead.category}`} /><span>01 / Lead work</span></div>
+              <div className="work-lead__copy"><div className="work-index__meta"><span>{lead.category}</span><span>{lead.year}</span></div><h3>{lead.title}</h3><p>{lead.description}</p><span className="work-index__link">Read the work <b>↗</b></span></div>
             </Link>
           </Reveal>
-          <div className="work-showcase__supporting">
-            {supporting.map((project, i) => (
-              <Reveal key={project.id} dir="up" delay={i * 100}>
-                <Link to="/work" className="work-case work-case--supporting">
-                  <div className="work-case__media"><Img src={project.image} alt={`${project.title} — ${project.category}`} /></div>
-                  <div className="work-case__body"><div className="work-case__meta"><span>0{i + 2} / {project.category}</span><span>{project.year}</span></div><h3>{project.title}</h3><p>{project.description}</p><span className="work-case__link">View case <b>↗</b></span></div>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
         </div>
-        <div className="work-showcase__footer"><span>ATTI VERSE / CAPABILITY PROOF</span><span>Entertainment · Events · Production · Creative</span></div>
+        <div className="work-index__projects">
+          {projects.map((project, i) => (
+            <Reveal key={project.id} dir="up" delay={i * 90}>
+              <Link to="/work" className="work-project-row">
+                <span className="work-project-row__number">0{i + 2}</span>
+                <div className="work-project-row__media"><Img src={project.image} alt={`${project.title} — ${project.category}`} /></div>
+                <div className="work-project-row__copy"><div className="work-index__meta"><span>{project.category}</span><span>{project.year}</span></div><h3>{project.title}</h3><p>{project.description}</p></div>
+                <span className="work-project-row__arrow">↗</span>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+        <div className="work-index__footer"><span>ATTI VERSE / CREATIVE PRACTICE</span><span>Entertainment · Events · Production · Creative</span></div>
       </div>
     </section>
   )
