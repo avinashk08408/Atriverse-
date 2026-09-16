@@ -11,61 +11,19 @@ import { FEATURED_EVENTS, EVENT_PLACEHOLDERS } from '../data/events.js'
 
 function VerifiedEventDetail({ event }) {
   return (
-    <section className="section section--off-white">
-      <div className="container grid-2">
+    <section className="section events-featured">
+      <div className="container">
+        <div className="events-featured__label"><span>01 / Verified Event</span><span>ATTI VERSE / EVENTS</span></div>
+        <div className="events-featured__grid">
         <Reveal dir="right">
-          <Img
-            src={event.image}
-            alt={event.title}
-            aspect="16 / 10"
-            style={{ borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-soft)' }}
-          />
+          <div className="events-featured__media"><Img src={event.image} alt={event.title} /><span>{event.category}</span></div>
         </Reveal>
-        <div>
+        <div className="events-featured__copy">
           <Reveal dir="up">
-            <span className="eyebrow">Featured Event</span>
-            <h2 className="section-title" style={{ marginTop: '0.8rem' }}>
-              {event.title}
-            </h2>
-            <p className="feature__tagline">{event.role}</p>
+            <span className="eyebrow">Featured Event / 2026</span><h2>{event.title}</h2><p className="events-featured__role">{event.role}</p><p className="events-featured__desc">{event.description}</p>
           </Reveal>
-          <Reveal dir="up" delay={120}>
-            <p style={{ color: 'var(--text-muted)', marginTop: '1rem' }}>{event.description}</p>
-          </Reveal>
-          <Reveal dir="up" delay={200}>
-            <p className="mt-sm" style={{ fontSize: '0.8rem', color: 'var(--text-faint)' }}>
-              Date, location and additional documentation — To Be Added.
-            </p>
-          </Reveal>
-          <Reveal dir="up" delay={280}>
-            <div className="grid-2" style={{ marginTop: '1.8rem', gap: '1rem', gridTemplateColumns: '1fr 1fr', alignItems: 'stretch' }}>
-              <VideoBox video={event.video} poster={event.image} label="EVENT VIDEO — PLACEHOLDER" />
-              <div
-                style={{
-                  border: '1px dashed var(--gold-line)',
-                  borderRadius: 'var(--radius-md)',
-                  display: 'grid',
-                  placeItems: 'center',
-                  aspectRatio: '16 / 9',
-                  color: 'var(--gold-soft)',
-                  fontSize: '0.8rem',
-                  letterSpacing: '0.2em',
-                  textTransform: 'uppercase',
-                  textAlign: 'center',
-                  padding: '1rem',
-                }}
-              >
-                Certificate
-                <br />
-                To Be Added
-              </div>
-            </div>
-          </Reveal>
-          <Reveal dir="up" delay={340}>
-            <Link to={`/events/${event.id}`} className="btn btn--emerald" style={{ marginTop: '1.8rem' }}>
-              <span>View Full Event Page</span>
-            </Link>
-          </Reveal>
+          <Reveal dir="up" delay={120}><div className="events-featured__meta"><div><span>Status</span><strong>Verified</strong></div><div><span>Format</span><strong>{event.category}</strong></div></div><Link to={`/events/${event.id}`} className="btn btn--gold"><span>View Event Story</span><span>↗</span></Link></Reveal>
+        </div>
         </div>
       </div>
     </section>
@@ -74,37 +32,29 @@ function VerifiedEventDetail({ event }) {
 
 function Events() {
   return (
-    <>
+    <div className="events-page">
       <Seo
         title="Events & Experiences | ATTI VERSE"
         description="From cultural celebrations and performances to event coordination and execution, ATTI VERSE creates and contributes to experiences that bring people together."
         path="/events"
       />
       <PageHeader
-        eyebrow="Events"
+        eyebrow="Events / Experiences"
         crumb="Events"
-        title="EVENTS & EXPERIENCES"
-        subtitle="From cultural celebrations and performances to event coordination and execution, ATTI VERSE creates and contributes to experiences that bring people together."
+        title="EVENTS THAT MOVE PEOPLE"
+        subtitle="A growing record of cultural celebrations, live performances and coordinated experiences delivered across the ATTI VERSE ecosystem."
       />
 
       {FEATURED_EVENTS.map((event) => (
         <VerifiedEventDetail key={event.id} event={event} />
       ))}
 
-      <section className="section">
-        <div className="container">
-          <SectionHeading
-            center
-            eyebrow="More Moments"
-            title="EVENTS IN THE MAKING"
-            subtitle="Placeholder cards for events being documented. Verified details will replace them as they arrive."
-          />
-          <div className="grid-3">
+      <section className="section events-index-section">
+        <div className="container"><div className="events-index__intro"><SectionHeading eyebrow="02 / Event Register" title="EVENTS IN THE MAKING" /><p>Projects, performances and collaborations being documented by the ATTI VERSE team.</p></div><div className="events-register">
             {EVENT_PLACEHOLDERS.map((event, i) => (
               <EventCard key={event.id} event={event} index={i} />
             ))}
-          </div>
-        </div>
+          </div></div>
       </section>
 
       <CTASection
@@ -115,7 +65,7 @@ function Events() {
         }
         primary={{ label: 'Plan An Event', to: '/contact' }}
       />
-    </>
+    </div>
   )
 }
 
