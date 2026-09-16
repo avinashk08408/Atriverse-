@@ -12,7 +12,6 @@ import WhyAttii from '../components/sections/WhyAttii.jsx'
 import ServicesIndex from '../components/sections/ServicesIndex.jsx'
 import ProductionShowcase from '../components/sections/ProductionShowcase.jsx'
 import TalentSection from '../components/sections/TalentSection.jsx'
-import FutureDirection from '../components/sections/FutureDirection.jsx'
 import InstitutionalCTA from '../components/sections/InstitutionalCTA.jsx'
 import { IMAGES } from '../config/images.js'
 import { SITE } from '../config/site.js'
@@ -403,7 +402,6 @@ function Home() {
       <TalentSection />
       <TeamPreview />
       <Milestones />
-      <FutureDirection />
       <Testimonials />
       <InstitutionalCTA />
       <CTASection
