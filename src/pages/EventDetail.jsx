@@ -33,6 +33,7 @@ function EventHeroSlideshow({ event }) {
 
 function EventDetail() {
   const { slug } = useParams()
+  const [eventFormOpen, setEventFormOpen] = useState(false)
   const event = EVENTS.find((e) => e.id === slug)
   if (!event) return <Navigate to="/events" replace />
   const others = EVENTS.filter((e) => e.id !== slug).slice(0, 3)
@@ -160,7 +161,12 @@ function EventDetail() {
             production and coordination in one place.
           </>
         }
-        primary={{ label: 'Plan An Event', to: '/contact' }}
+        primary={{ label: 'Plan An Event' }}
+        secondary={false}
+        inlineForm
+        inlineFormKind="Organize an Event"
+        formOpen={eventFormOpen}
+        onFormToggle={() => setEventFormOpen((open) => !open)}
       />
     </>
   )

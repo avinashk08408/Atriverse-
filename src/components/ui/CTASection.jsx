@@ -3,7 +3,7 @@ import Reveal from './Reveal.jsx'
 import Icon from './Icon.jsx'
 import ContactForm from './ContactForm.jsx'
 
-function CTASection({ title = "LET'S CREATE SOMETHING.", copy, primary, secondary, inlineForm, formOpen, onFormToggle }) {
+function CTASection({ title = "LET'S CREATE SOMETHING.", copy, primary, secondary, inlineForm, inlineFormKind = 'General Collaboration', formOpen, onFormToggle }) {
   return (
     <section className="cta" aria-label="Call to action">
       <div className="container">
@@ -36,7 +36,7 @@ function CTASection({ title = "LET'S CREATE SOMETHING.", copy, primary, secondar
             )}
           </div>
         </Reveal>
-        {inlineForm && formOpen && <div className="cta__inline-form"><ContactForm kind="General Collaboration" compact /></div>}
+        {inlineForm && formOpen && <div className="cta__inline-form"><ContactForm kind={inlineFormKind} compact /></div>}
       </div>
     </section>
   )
