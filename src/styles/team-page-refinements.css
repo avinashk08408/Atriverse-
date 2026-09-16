@@ -235,3 +235,131 @@
     justify-self: start;
   }
 }
+
+/* Roles Across the Verse: roster-ready department cards. */
+.roles-roster {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.role-roster-card {
+  overflow: hidden;
+  border: 1px solid rgba(176, 140, 64, 0.28);
+  background: rgba(255, 255, 255, 0.035);
+  transition: border-color 0.35s ease, transform 0.35s ease, background 0.35s ease;
+}
+
+.role-roster-card:hover {
+  border-color: var(--gold);
+  background: rgba(176, 140, 64, 0.07);
+  transform: translateY(-4px);
+}
+
+.role-roster-card__head {
+  display: grid;
+  grid-template-columns: 42px 1fr auto;
+  align-items: start;
+  gap: 1rem;
+  padding: 1.35rem 1.35rem 1.15rem;
+  border-bottom: 1px solid rgba(176, 140, 64, 0.22);
+}
+
+.role-roster-card__index {
+  color: var(--gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+}
+
+.role-roster-card__head h3 {
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1;
+}
+
+.role-roster-card__head p {
+  margin-top: 0.45rem;
+  color: var(--text-faint);
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+.role-roster-card__count {
+  color: var(--gold-soft);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.role-roster-card__list {
+  padding: 0 1.35rem;
+}
+
+.role-roster-person {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 66px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.role-roster-person:last-child {
+  border-bottom: 0;
+}
+
+.role-roster-person__number {
+  color: var(--text-faint);
+  font-size: 0.62rem;
+}
+
+.role-roster-person__identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.role-roster-person__identity strong {
+  color: var(--white);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.role-roster-person__identity span {
+  color: var(--gold-soft);
+  font-size: 0.63rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.role-roster-person__status {
+  color: var(--text-faint);
+  font-size: 0.56rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .roles-roster {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .role-roster-card__head {
+    grid-template-columns: 32px 1fr;
+  }
+
+  .role-roster-card__count {
+    grid-column: 2;
+  }
+
+  .role-roster-person {
+    grid-template-columns: 24px 1fr;
+    padding-block: 0.8rem;
+  }
+
+  .role-roster-person__status {
+    grid-column: 2;
+  }
+}

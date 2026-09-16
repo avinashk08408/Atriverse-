@@ -5,7 +5,6 @@ import PageHeader from '../components/ui/PageHeader.jsx'
 import Img from '../components/ui/Img.jsx'
 import CTASection from '../components/ui/CTASection.jsx'
 import { LEADERSHIP, TEAM_CATEGORIES } from '../data/team.js'
-import { PLACEHOLDER } from '../config/site.js'
 
 function Leadership() {
   return (
@@ -52,16 +51,27 @@ function Categories() {
           title={<>ROLES ACROSS<br /><span className="text-gold">THE VERSE.</span></>}
           subtitle="A scalable operating structure for the talent, craft and production disciplines that make every ATTI VERSE experience possible."
         />
-        <div className="roles-directory">
+        <div className="roles-roster">
           {TEAM_CATEGORIES.map((cat, ci) => (
             <Reveal key={cat.id} dir="up" delay={ci * 70}>
-              <article className="role-directory-row">
-                <span className="role-directory-row__index">0{ci + 1}</span>
-                <div className="role-directory-row__title"><h3>{cat.title}</h3><p>{cat.subtitle}</p></div>
-                <div className="role-directory-row__roles">
-                  {cat.placeholderRoles.map((role) => <span key={role}>{role}</span>)}
+              <article className="role-roster-card">
+                <header className="role-roster-card__head">
+                  <span className="role-roster-card__index">0{ci + 1}</span>
+                  <div><h3>{cat.title}</h3><p>{cat.subtitle}</p></div>
+                  <span className="role-roster-card__count">{String(cat.placeholderRoles.length).padStart(2, '0')} roles</span>
+                </header>
+                <div className="role-roster-card__list">
+                  {cat.placeholderRoles.map((role, ri) => (
+                    <div key={role} className="role-roster-person">
+                      <span className="role-roster-person__number">{String(ri + 1).padStart(2, '0')}</span>
+                      <div className="role-roster-person__identity">
+                        <strong>Name to be added</strong>
+                        <span>{role}</span>
+                      </div>
+                      <span className="role-roster-person__status">Profile pending</span>
+                    </div>
+                  ))}
                 </div>
-                <span className="role-directory-row__status">{PLACEHOLDER.tba}</span>
               </article>
             </Reveal>
           ))}
