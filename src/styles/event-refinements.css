@@ -1,4 +1,4 @@
-/* Event showcase: one spacious event at a time, following the production strip pattern. */
+/* Event showcase: centered active slide with previous/next previews. */
 .event-showcase__head {
   display: flex;
   align-items: end;
@@ -42,6 +42,7 @@
 }
 
 .event-strip {
+  --event-slide-width: min(760px, calc(100vw - 22rem));
   display: flex;
   gap: 1.5rem;
   overflow-x: auto;
@@ -49,7 +50,7 @@
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   margin-top: 2.8rem;
-  padding: 0 max(1.25rem, calc((100vw - 1240px) / 2));
+  padding: 0 max(1.25rem, calc((100vw - var(--event-slide-width)) / 2));
   padding-bottom: 0.7rem;
 }
 
@@ -58,8 +59,8 @@
 }
 
 .event-strip__item {
-  flex: 0 0 min(760px, calc(100vw - 2.5rem));
-  scroll-snap-align: start;
+  flex: 0 0 var(--event-slide-width);
+  scroll-snap-align: center;
 }
 
 .event-strip__item .event-card,
@@ -136,6 +137,12 @@
   to { opacity: 1; transform: scale(1); }
 }
 
+@media (max-width: 1000px) {
+  .event-strip {
+    --event-slide-width: min(700px, calc(100vw - 12rem));
+  }
+}
+
 @media (max-width: 680px) {
   .event-showcase__head {
     align-items: flex-start;
@@ -148,12 +155,9 @@
   }
 
   .event-strip {
+    --event-slide-width: calc(100vw - 2.3rem);
     margin-top: 2rem;
     padding-inline: 1.15rem;
-  }
-
-  .event-strip__item {
-    flex-basis: calc(100vw - 2.3rem);
   }
 
   .event-strip__item .event-card__media {
