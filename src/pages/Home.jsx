@@ -333,6 +333,16 @@ function Milestones() {
 }
 
 function TeamPreview() {
+  const [activeLeader, setActiveLeader] = useState(0)
+  const leader = LEADERSHIP[activeLeader]
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveLeader((current) => (current + 1) % LEADERSHIP.length)
+    }, 5000)
+    return () => window.clearInterval(timer)
+  }, [])
+
   return (
     <section className="section section--dark team-spotlight">
       <div className="container">
@@ -344,30 +354,47 @@ function TeamPreview() {
           <Reveal dir="up" delay={120}>
             <div className="team-spotlight__intro">
               <p>Four perspectives. One direction. Meet the people shaping the vision, operations, growth and experiences behind ATTI VERSE.</p>
-              <Link to="/team" className="text-link text-link--dark">Meet Our Team →</Link>
+              <Link to="/team" className="btn btn--gold team-spotlight__cta">Meet Our Team <span>↗</span></Link>
             </div>
           </Reveal>
         </div>
 
-        <div className="team-spotlight__grid">
-          {LEADERSHIP.map((member, i) => (
-            <Reveal key={member.id} dir="up" delay={i * 90}>
-              <article className={`team-spotlight__card ${i === 0 ? 'team-spotlight__card--feature' : ''}`}>
-                <div className="team-spotlight__media">
-                  <Img src={member.image} alt={member.name} />
-                  <span className="team-spotlight__index">0{i + 1}</span>
-                </div>
-                <div className="team-spotlight__info">
-                  <div>
-                    <h3>{member.name}</h3>
-                    <p className="team-spotlight__role">{member.role}</p>
-                  </div>
-                  <span className="team-spotlight__arrow">↗</span>
-                </div>
-                {i === 0 && <p className="team-spotlight__focus">{member.focus}</p>}
-              </article>
-            </Reveal>
-          ))}
+        <div className="team-spotlight__showcase">
+          <Reveal key={leader.id} dir="up">
+            <article className="team-spotlight__active">
+              <div className="team-spotlight__active-media">
+                <Img src={leader.image} alt={leader.name} />
+                <span className="team-spotlight__index">0{activeLeader + 1} / 0{LEADERSHIP.length}</span>
+              </div>
+              <div className="team-spotlight__active-copy">
+                <span className="eyebrow">Currently shaping the verse</span>
+                <h3>{leader.name}</h3>
+                <p className="team-spotlight__role">{leader.role}</p>
+                {leader.designation && <p className="team-spotlight__designation">{leader.designation}</p>}
+                <p className="team-spotlight__focus">{leader.focus}</p>
+              </div>
+            </article>
+          </Reveal>
+          <div className="team-spotlight__controls" aria-label="Leadership profiles">
+            <div className="team-spotlight__dots">
+              {LEADERSHIP.map((member, index) => (
+                <button
+                  key={member.id}
+                  type="button"
+                  className={index === activeLeader ? 'is-active' : ''}
+                  aria-label={`Show ${member.name}`}
+                  aria-pressed={index === activeLeader}
+                  onClick={() => setActiveLeader(index)}
+                >
+                  <span>0{index + 1}</span><i />
+                </button>
+              ))}
+            </div>
+            <div className="team-spotlight__control-arrows">
+              <button type="button" aria-label="Previous leader" onClick={() => setActiveLeader((activeLeader - 1 + LEADERSHIP.length) % LEADERSHIP.length)}>←</button>
+              <button type="button" aria-label="Next leader" onClick={() => setActiveLeader((activeLeader + 1) % LEADERSHIP.length)}>→</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
