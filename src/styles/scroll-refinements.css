@@ -1,0 +1,24 @@
+/* Page-level section reveal: complements the existing component-level Reveal utility. */
+.scroll-section-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.85s var(--ease-out),
+    transform 0.85s var(--ease-out);
+  transition-delay: var(--scroll-section-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.scroll-section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-section-reveal,
+  .scroll-section-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
