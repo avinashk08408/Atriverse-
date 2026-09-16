@@ -9,8 +9,6 @@ import TeamCard from '../components/cards/TeamCard.jsx'
 import WhatMeans from '../components/sections/WhatMeans.jsx'
 import OrganizationTree from '../components/sections/OrganizationTree.jsx'
 import FutureDirection from '../components/sections/FutureDirection.jsx'
-import WhyWorkWithUs from '../components/sections/WhyWorkWithUs.jsx'
-import LegalFoundation from '../components/sections/LegalFoundation.jsx'
 import { IMAGES } from '../config/images.js'
 import { LEADERSHIP } from '../data/team.js'
 import { MISSION_ITEMS, VALUES } from '../data/organization.js'
@@ -144,7 +142,7 @@ function Mission() {
     <section className="section about-mission">
       <div className="container">
         <div className="about-mission__header">
-          <SectionHeading eyebrow="Mission / Operating Commitments" title="WHAT WE ARE BUILT TO DO" />
+          <SectionHeading eyebrow="Mission / Operating Commitments" title={<>WHAT WE ARE BUILT TO <span className="text-gold">DO</span></>} />
           <p>Eight operating principles translate the ATTI VERSE vision into consistent creative work.</p>
         </div>
         <div className="mission-num about-mission__grid about-mission__list">
@@ -167,9 +165,8 @@ function CoreValues() {
     <section className="section section--light-green">
       <div className="container">
         <SectionHeading
-          center
           eyebrow="Values"
-          title="THE PRINCIPLES WE PERFORM BY"
+          title={<>THE PRINCIPLES WE <span className="text-gold">PERFORM</span> BY</>}
           subtitle="Sixteen principles held together by one culture."
         />
         <div className="values-editorial" style={{ marginTop: '1.5rem' }}>
@@ -189,9 +186,8 @@ function Structure() {
     <section className="section section--off-white">
       <div className="container">
         <SectionHeading
-          center
           eyebrow="Organizational Structure"
-          title={<>BUILT WITH STRUCTURE.<br /><span className="text-gold">DRIVEN BY CREATIVITY.</span></>}
+          title={<>BUILT WITH <span className="text-gold">STRUCTURE.</span><br />DRIVEN BY CREATIVITY.</>}
           subtitle="Executive leadership and governance oversee five dedicated divisions."
         />
         <OrganizationTree />
@@ -240,7 +236,7 @@ function About() {
       <PageHeader
         eyebrow="About Us"
         crumb="About"
-        title="ABOUT ATTI VERSE"
+        title={<>ABOUT <span className="text-gold">ATTI VERSE</span></>}
         subtitle="A structured creative organization built for entertainment, production and cultural impact."
         image={IMAGES.aboutHome}
       />
@@ -252,8 +248,6 @@ function About() {
       <CoreValues />
       <Structure />
       <Leadership />
-      <LegalFoundation />
-      <WhyWorkWithUs />
       <FutureDirection eyebrow="Growth Direction" />
       <CTASection
         copy={

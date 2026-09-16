@@ -41,7 +41,9 @@
 
 .about-mission__list .mission-num__num {
   color: var(--gold);
-  font-size: 0.72rem;
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  font-weight: 600;
+  line-height: 1;
   letter-spacing: 0.16em;
 }
 

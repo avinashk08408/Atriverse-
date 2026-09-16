@@ -8,7 +8,7 @@ function WhatMeans() {
     <section className="section section--light-green about-meaning">
       <div className="container">
         <div className="about-meaning__header">
-          <SectionHeading eyebrow="The Name / Brand System" title="WHAT ATTI VERSE MEANS" />
+          <SectionHeading eyebrow="The Name / Brand System" title={<>WHAT <span className="text-gold">ATTI VERSE</span> MEANS</>} />
           <p>A name built from the values, creative language and shared universe the organization is designed to grow.</p>
         </div>
 
