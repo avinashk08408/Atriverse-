@@ -73,3 +73,11 @@
 
 .contact-form__field select { width:100%; border:1px solid rgba(176,140,64,.35); border-radius:0; outline:0; padding:.8rem .85rem; background:rgba(7,13,13,.5); color:var(--ink); font:inherit; font-size:.86rem; }
 .contact-form__field select:focus { border-color:var(--gold); box-shadow:0 0 0 2px rgba(176,140,64,.12); }
+
+/* Footer type refinement. */
+.footer__brand-name { color:var(--gold) !important; }
+.footer__tagline { color:var(--white) !important; font-size:.84rem !important; }
+.footer__heading { font-size:.68rem !important; }
+.footer__link { font-size:.88rem !important; }
+.footer__contact-link { font-size:.84rem !important; }
+.footer__contact-link strong { font-size:.72rem !important; }
