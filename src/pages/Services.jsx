@@ -12,7 +12,7 @@ function ServiceCard({ service, index }) {
     <Reveal dir="up" delay={(index % 2) * 90}>
       <Link to={`/services/${service.slug}`} className="service-catalog__card">
         <div className="service-catalog__media">
-          <Img src={service.image} alt={`${service.title} — ATTI VERSE`} />
+          <Img src={service.image} alt={`${service.title} — Attii Verse`} />
           <span className="service-catalog__number">{service.number}</span>
           <span className="service-catalog__lens">{service.lens}</span>
         </div>
@@ -31,13 +31,13 @@ function ServiceCard({ service, index }) {
 function Services() {
   return (
     <>
-      <Seo title="Services | Entertainment, Events, Media & Creative — ATTI VERSE" description="ATTI VERSE services: entertainment, event management, media production, film & creative production, design and talent collaboration." path="/services" />
+      <Seo title="Services | Entertainment, Events, Media & Creative — Attii Verse" description="Attii Verse services: entertainment, event management, media production, film & creative production, design and talent collaboration." path="/services" />
       <PageHeader eyebrow="Services" crumb="Services" title="WHAT WE DO" subtitle="One creative ecosystem. Six disciplines — from stage to screen, from concept to execution." />
       <section className="section services-catalog">
         <div className="container">
           <div className="services-catalog__intro">
             <SectionHeading eyebrow="Capabilities / Service Catalogue" title="BUILT FOR THE WORK THAT MOVES PEOPLE." />
-            <Reveal dir="left" delay={120}><p>Explore the six divisions that bring ATTI VERSE projects from first idea to final delivery. Every service follows the same standard of clarity, creativity and coordination.</p></Reveal>
+            <Reveal dir="left" delay={120}><p>Explore the six divisions that bring Attii Verse projects from first idea to final delivery. Every service follows the same standard of clarity, creativity and coordination.</p></Reveal>
           </div>
           <div className="service-catalog__grid">
             {SERVICES.map((service, index) => <ServiceCard key={service.id} service={service} index={index} />)}

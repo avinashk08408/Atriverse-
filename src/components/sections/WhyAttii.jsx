@@ -3,7 +3,7 @@ import Reveal from './../ui/Reveal.jsx'
 import SectionHeading from './../ui/SectionHeading.jsx'
 import { WHY_BLOCKS } from '../../data/organization.js'
 
-// "Why ATTI VERSE" — More than entertainment. A structured creative organization.
+// "Why Attii Verse" — More than entertainment. A structured creative organization.
 function WhyAttii() {
   return (
     <section className="section why-attii-section">
@@ -12,7 +12,7 @@ function WhyAttii() {
         <div className="why-attii__head">
           <div className="why-attii__intro">
             <SectionHeading
-              eyebrow="Why ATTI VERSE"
+              eyebrow="Why Attii Verse"
               title={
                 <>
                   MORE THAN ENTERTAINMENT.
@@ -23,7 +23,7 @@ function WhyAttii() {
             />
             <Reveal dir="up" delay={120}>
               <p style={{ color: 'var(--text-muted)' }}>
-                ATTI VERSE operates through dedicated divisions and coordinated teams — leadership,
+                Attii Verse operates through dedicated divisions and coordinated teams — leadership,
                 production, events, media and talent working together toward one standard.
               </p>
             </Reveal>

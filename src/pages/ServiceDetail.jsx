@@ -19,13 +19,13 @@ function ServiceDetail() {
 
   return (
     <div className="service-detail">
-      <Seo title={`${service.title} | ATTI VERSE`} description={service.description} path={`/services/${slug}`} />
+      <Seo title={`${service.title} | Attii Verse`} description={service.description} path={`/services/${slug}`} />
       <PageHeader eyebrow={`${service.number} — Services`} crumb={service.title} title={service.title.toUpperCase()} subtitle={service.tagline} image={service.image} />
 
       <section className="section service-detail__overview">
         <div className="container service-overview">
           <Reveal dir="right" delay={100}>
-            <div className="service-overview__media"><Img src={service.image} alt={`${service.title} — ATTI VERSE`} priority /></div>
+            <div className="service-overview__media"><Img src={service.image} alt={`${service.title} — Attii Verse`} priority /></div>
           </Reveal>
           <div className="service-overview__copy">
             <Reveal dir="up">
@@ -63,14 +63,14 @@ function ServiceDetail() {
       </section>
 
       <section className="section section--light-green service-gallery-section">
-        <div className="container"><div className="service-gallery__intro"><SectionHeading eyebrow="05 / Field Notes" title="VISUAL MOMENTS" /><p>Selected frames from the ATTI VERSE production world — the atmosphere, detail and energy behind the delivery.</p></div><div className="service-gallery service-gallery--contact-sheet" style={{ marginTop: '2.5rem' }}>{gallery.map((src, i) => <Reveal key={src + i} dir="up" delay={i * 80}><figure className={`service-gallery__item ${i === 0 ? 'service-gallery__item--large' : ''}`}><Img src={src} alt={`${service.title} — visual ${i + 1}`} /><figcaption><span>0{i + 1}</span><small>{service.lens} / FIELD NOTE</small></figcaption></figure></Reveal>)}</div></div>
+        <div className="container"><div className="service-gallery__intro"><SectionHeading eyebrow="05 / Field Notes" title="VISUAL MOMENTS" /><p>Selected frames from the Attii Verse production world — the atmosphere, detail and energy behind the delivery.</p></div><div className="service-gallery service-gallery--contact-sheet" style={{ marginTop: '2.5rem' }}>{gallery.map((src, i) => <Reveal key={src + i} dir="up" delay={i * 80}><figure className={`service-gallery__item ${i === 0 ? 'service-gallery__item--large' : ''}`}><Img src={src} alt={`${service.title} — visual ${i + 1}`} /><figcaption><span>0{i + 1}</span><small>{service.lens} / FIELD NOTE</small></figcaption></figure></Reveal>)}</div></div>
       </section>
 
       <section className="section service-other-section">
-        <div className="container"><div className="service-other__heading"><SectionHeading eyebrow="06 / Explore" title="OTHER SERVICES" /><p>Move through the wider ATTI VERSE capability system.</p></div><div className="service-other service-other--industrial" style={{ marginTop: '2rem' }}>{SERVICES.filter((s) => s.slug !== slug).map((s, i) => <Reveal key={s.id} dir="up" delay={(i % 3) * 60}><Link to={`/services/${s.slug}`} className="service-other__item"><span>{s.number}</span><div><small>{s.lens}</small><h3>{s.title}</h3><p>{s.summary}</p></div><strong>↗</strong></Link></Reveal>)}</div></div>
+        <div className="container"><div className="service-other__heading"><SectionHeading eyebrow="06 / Explore" title="OTHER SERVICES" /><p>Move through the wider Attii Verse capability system.</p></div><div className="service-other service-other--industrial" style={{ marginTop: '2rem' }}>{SERVICES.filter((s) => s.slug !== slug).map((s, i) => <Reveal key={s.id} dir="up" delay={(i % 3) * 60}><Link to={`/services/${s.slug}`} className="service-other__item"><span>{s.number}</span><div><small>{s.lens}</small><h3>{s.title}</h3><p>{s.summary}</p></div><strong>↗</strong></Link></Reveal>)}</div></div>
       </section>
 
-      <CTASection title="READY TO TALK?" copy={<>Need {service.title.toLowerCase()} for an event, a brand, a campus or a production? Tell us what you&apos;re building — we&apos;ll find the right team and the right approach.</>} secondary={false} inlineFormOptions={[{ label: 'Join ATTI VERSE', kind: 'Join ATTI VERSE' }, { label: 'Organize an Event', kind: 'Organize an Event' }]} activeForm={activeForm} onFormSelect={setActiveForm} />
+      <CTASection title="READY TO TALK?" copy={<>Need {service.title.toLowerCase()} for an event, a brand, a campus or a production? Tell us what you&apos;re building — we&apos;ll find the right team and the right approach.</>} secondary={false} inlineFormOptions={[{ label: 'Join Attii Verse', kind: 'Join Attii Verse' }, { label: 'Organize an Event', kind: 'Organize an Event' }]} activeForm={activeForm} onFormSelect={setActiveForm} />
     </div>
   )
 }

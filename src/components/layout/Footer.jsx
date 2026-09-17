@@ -26,7 +26,7 @@ function Footer() {
             <div className="footer__brand">
             <div>
               <Link to="/" className="footer__brand-name">
-                ATTI VERSE
+                Attii Verse
               </Link>
               <p className="footer__tagline">Our Talent. Our Verse.</p>
               <p className="footer__brand-line">{SITE.brandLine}</p>
@@ -49,7 +49,7 @@ function Footer() {
               <span className="footer__social footer__social--disabled" aria-label="LinkedIn profile coming soon" title="LinkedIn profile coming soon">
                 <Icon name="linkedin" size={18} />
               </span>
-              <a className="footer__social" href={`mailto:${SITE.email}`} aria-label="Email ATTI VERSE">
+              <a className="footer__social" href={`mailto:${SITE.email}`} aria-label="Email Attii Verse">
                 <Icon name="mail" size={18} />
               </a>
               <span className="footer__social footer__social--disabled" aria-label="YouTube channel coming soon" title="YouTube channel coming soon">
@@ -101,7 +101,7 @@ function Footer() {
             © {year} {SITE.fullName}. All Rights Reserved.
           </p>
           <p>
-            Crafted with <span aria-hidden="true" style={{ color: 'var(--gold)' }}>✦</span> in the ATTI VERSE ecosystem.
+            Crafted with <span aria-hidden="true" style={{ color: 'var(--gold)' }}>✦</span> in the Attii Verse ecosystem.
           </p>
         </div>
       </div>

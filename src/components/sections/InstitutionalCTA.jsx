@@ -15,7 +15,7 @@ function InstitutionalCTA() {
               <h2 className="institutional__title">PLANNING AN INSTITUTIONAL EVENT?</h2>
               <p className="institutional__desc">
                 From cultural celebrations and college fests to entertainment, performances and
-                complete production support — ATTI VERSE can plan, coordinate and deliver.
+                complete production support — Attii Verse can plan, coordinate and deliver.
               </p>
               <Link to="/contact" className="btn btn--gold institutional__cta">
                 <span>DISCUSS YOUR EVENT</span>

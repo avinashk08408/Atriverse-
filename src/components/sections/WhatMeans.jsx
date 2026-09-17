@@ -2,13 +2,13 @@ import Reveal from './../ui/Reveal.jsx'
 import SectionHeading from './../ui/SectionHeading.jsx'
 import { NAME_MEANING } from '../../data/organization.js'
 
-// "What ATTI VERSE Means" — elegant storytelling about the name.
+// "What Attii Verse Means" — elegant storytelling about the name.
 function WhatMeans() {
   return (
     <section className="section section--light-green about-meaning">
       <div className="container">
         <div className="about-meaning__header">
-          <SectionHeading eyebrow="The Name / Brand System" title={<>WHAT <span className="text-gold">ATTI VERSE</span> MEANS</>} />
+          <SectionHeading eyebrow="The Name / Brand System" title={<>WHAT <span className="text-gold">Attii Verse</span> MEANS</>} />
           <p>A name built from the values, creative language and shared universe the organization is designed to grow.</p>
         </div>
 

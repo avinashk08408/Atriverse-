@@ -61,9 +61,9 @@ function Navbar() {
     <>
       <header className={`nav ${scrolled ? 'nav--scrolled' : ''} ${open ? 'nav--scrolled' : ''}`}>
         <div className="container nav__inner">
-          <Link to="/" className="nav__brand" aria-label="ATTI VERSE home">
+          <Link to="/" className="nav__brand" aria-label="Attii Verse home">
             <span className="nav__brand-text">
-              <span className="nav__brand-name">ATTI VERSE</span>
+              <span className="nav__brand-name">Attii Verse</span>
               <span className="nav__brand-sub">Entertainment &amp; Productions</span>
             </span>
           </Link>
@@ -102,10 +102,10 @@ function Navbar() {
       {workFormOpen && (
         <div className="nav__form-panel">
           <div className="nav__form-heading">
-            <span>Join ATTI VERSE</span>
-            <button type="button" aria-label="Close Join ATTI VERSE form" onClick={() => setWorkFormOpen(false)}>×</button>
+            <span>Join Attii Verse</span>
+            <button type="button" aria-label="Close Join Attii Verse form" onClick={() => setWorkFormOpen(false)}>×</button>
           </div>
-          <ContactForm kind="Join ATTI VERSE" compact />
+          <ContactForm kind="Join Attii Verse" compact />
         </div>
       )}
 

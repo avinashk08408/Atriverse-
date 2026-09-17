@@ -10,8 +10,8 @@ function Productions() {
   return (
     <>
       <Seo
-        title="Media & Productions | ATTI VERSE"
-        description="Photography, videography, editing, reels, event aftermovies, promotional videos, short films, scriptwriting and direction by ATTI VERSE."
+        title="Media & Productions | Attii Verse"
+        description="Photography, videography, editing, reels, event aftermovies, promotional videos, short films, scriptwriting and direction by Attii Verse."
         path="/productions"
       />
       <PageHeader

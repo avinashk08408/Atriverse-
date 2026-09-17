@@ -17,8 +17,8 @@ function Work() {
   return (
     <div className="portfolio-page">
       <Seo
-        title="Our Work | Portfolio — ATTI VERSE"
-        description="A portfolio of entertainment, events, production, creative and media work by ATTI VERSE Entertainment & Productions."
+        title="Our Work | Portfolio — Attii Verse"
+        description="A portfolio of entertainment, events, production, creative and media work by Attii Verse Entertainment & Productions."
         path="/work"
       />
       <PageHeader

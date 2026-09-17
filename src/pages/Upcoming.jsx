@@ -28,8 +28,8 @@ function Upcoming() {
   const totalItems = Object.values(UPCOMING).flat().length
   return (
     <div className="upcoming-page">
-      <Seo title="Upcoming | What's Next — ATTI VERSE" description="Upcoming events, productions, collaborations and opportunities from ATTI VERSE Entertainment & Productions." path="/upcoming" />
-      <PageHeader eyebrow="Upcoming / Forward Calendar" crumb="Upcoming" title="BUILT FOR WHAT’S AHEAD" subtitle="A live register of the events, productions, collaborations and opportunities moving through the ATTI VERSE system." />
+      <Seo title="Upcoming | What's Next — Attii Verse" description="Upcoming events, productions, collaborations and opportunities from Attii Verse Entertainment & Productions." path="/upcoming" />
+      <PageHeader eyebrow="Upcoming / Forward Calendar" crumb="Upcoming" title="BUILT FOR WHAT’S AHEAD" subtitle="A live register of the events, productions, collaborations and opportunities moving through the Attii Verse system." />
       <section className="upcoming-editorial">
         <div className="container">
           <div className="upcoming-editorial__intro"><Reveal dir="up"><span className="eyebrow">The forward register / 2026</span><h2>THE NEXT CHAPTER IS <span className="text-gold">ALREADY MOVING.</span></h2></Reveal><Reveal dir="left" delay={100}><div><p>Some work is confirmed. Some is in development. Some doors are open. This is where we keep track of the movement without pretending the details are further along than they are.</p><div className="upcoming-editorial__stats"><span><b>{String(totalItems).padStart(2, '0')}</b> active records</span><span><b>04</b> directions</span><span><b>∞</b> possibilities</span></div></div></Reveal></div>
@@ -38,7 +38,7 @@ function Upcoming() {
           <div className="upcoming-editorial__legend"><span><i className="is-open" /> Open / accepting interest</span><span><i /> In development / details forthcoming</span></div>
         </div>
       </section>
-      <CTASection copy={<>Want to be part of what’s next? Join the verse and tell us where you fit.</>} primary={{ label: 'Join The Verse' }} secondary={false} inlineForm inlineFormKind="Join ATTI VERSE" formOpen={joinFormOpen} onFormToggle={() => setJoinFormOpen((open) => !open)} />
+      <CTASection copy={<>Want to be part of what’s next? Join the verse and tell us where you fit.</>} primary={{ label: 'Join The Verse' }} secondary={false} inlineForm inlineFormKind="Join Attii Verse" formOpen={joinFormOpen} onFormToggle={() => setJoinFormOpen((open) => !open)} />
     </div>
   )
 }

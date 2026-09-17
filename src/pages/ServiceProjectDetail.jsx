@@ -14,12 +14,12 @@ function ServiceProjectDetail() {
   const gallery = [service.image, ...SERVICES.filter((item) => item.slug !== slug).slice(0, 2).map((item) => item.image)]
   return (
     <div className="project-story-page">
-      <Seo title={`${project.title} | ATTI VERSE`} description={`How ATTI VERSE approaches ${project.title}.`} path={`/services/${slug}/project/${projectIndex}`} />
+      <Seo title={`${project.title} | Attii Verse`} description={`How Attii Verse approaches ${project.title}.`} path={`/services/${slug}/project/${projectIndex}`} />
       <PageHeader eyebrow={`${service.number} — Project Story`} crumb={project.title} title={project.title.toUpperCase()} subtitle={`${project.category} / ${project.year}`} image={service.image} />
       <section className="section project-story__intro">
         <div className="container project-story__grid">
           <Reveal dir="right"><div className="project-story__hero"><Img src={service.image} alt={project.title} /></div></Reveal>
-          <div><Reveal dir="up"><span className="eyebrow">The Brief</span><h2>FROM FIRST IDEA TO <span className="text-gold">FINAL MOMENT.</span></h2><p>Every event begins with a clear understanding of its purpose, audience and energy. For this {project.category.toLowerCase()} brief, the ATTI VERSE team shapes the creative direction before the execution begins.</p></Reveal><Reveal dir="up" delay={120}><div className="project-story__meta"><div><span>Service</span><strong>{service.title}</strong></div><div><span>Year</span><strong>{project.year}</strong></div></div></Reveal></div>
+          <div><Reveal dir="up"><span className="eyebrow">The Brief</span><h2>FROM FIRST IDEA TO <span className="text-gold">FINAL MOMENT.</span></h2><p>Every event begins with a clear understanding of its purpose, audience and energy. For this {project.category.toLowerCase()} brief, the Attii Verse team shapes the creative direction before the execution begins.</p></Reveal><Reveal dir="up" delay={120}><div className="project-story__meta"><div><span>Service</span><strong>{service.title}</strong></div><div><span>Year</span><strong>{project.year}</strong></div></div></Reveal></div>
         </div>
       </section>
       <section className="section section--off-white"><div className="container project-story__narrative"><Reveal dir="up"><span className="eyebrow">How We Conduct The Work</span><h2>CLARITY IN THE PLAN. <span className="text-gold">ENERGY IN THE DELIVERY.</span></h2></Reveal><div className="project-story__steps"><div><b>01</b><h3>Understand</h3><p>We align on the audience, objective, mood and experience the project needs to create.</p></div><div><b>02</b><h3>Build</h3><p>Creative, production and coordination teams turn the brief into a practical execution plan.</p></div><div><b>03</b><h3>Deliver</h3><p>On-ground teams coordinate every moving part and protect the quality of the final moment.</p></div></div></div></section>

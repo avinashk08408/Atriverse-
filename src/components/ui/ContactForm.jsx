@@ -6,7 +6,7 @@ const COMMON_FIELDS = [
 ]
 
 function ContactForm({ kind = 'General Collaboration', compact = false }) {
-  const fields = kind === 'Join ATTI VERSE'
+  const fields = kind === 'Join Attii Verse'
     ? [
         { name: 'name', label: 'Full name', placeholder: 'Your full name', type: 'text', required: true },
         { name: 'email', label: 'Email address', placeholder: 'you@email.com', type: 'email', required: true },
@@ -31,15 +31,15 @@ function ContactForm({ kind = 'General Collaboration', compact = false }) {
 
   return (
     <form className={`contact-form ${compact ? 'contact-form--compact' : ''}`} action={`https://formsubmit.co/${DESTINATION}`} method="POST">
-      <input type="hidden" name="_subject" value={`ATTI VERSE — ${kind}`} />
+      <input type="hidden" name="_subject" value={`Attii Verse — ${kind}`} />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
       <input type="hidden" name="form_type" value={kind} />
       <div className="contact-form__grid">
         {fields.map((field) => <label key={field.name} className="contact-form__field"><span>{field.label}{field.required ? ' *' : ''}</span>{field.type === 'select' ? <select name={field.name} required={field.required} defaultValue=""><option value="" disabled>Select {field.label.toLowerCase()}</option>{field.options.map((option) => <option key={option} value={option}>{option}</option>)}</select> : <input name={field.name} type={field.type} placeholder={field.placeholder} required={field.required} min={field.min} max={field.max} />}</label>)}
-        <label className="contact-form__field contact-form__field--wide"><span>{kind === 'Join ATTI VERSE' ? 'Tell us about yourself' : kind === 'Organize an Event' ? 'Event brief and requirements' : 'Message'} *</span><textarea name="message" placeholder={kind === 'General Collaboration' ? 'Tell us what you are building...' : 'Share the details so our team can understand the opportunity...'} required rows={compact ? 5 : 6} /></label>
+        <label className="contact-form__field contact-form__field--wide"><span>{kind === 'Join Attii Verse' ? 'Tell us about yourself' : kind === 'Organize an Event' ? 'Event brief and requirements' : 'Message'} *</span><textarea name="message" placeholder={kind === 'General Collaboration' ? 'Tell us what you are building...' : 'Share the details so our team can understand the opportunity...'} required rows={compact ? 5 : 6} /></label>
       </div>
-      <button type="submit" className="btn btn--gold contact-form__submit">{kind === 'Join ATTI VERSE' ? 'Send Application' : kind === 'Organize an Event' ? 'Send Event Brief' : 'Send Message'} <span>↗</span></button>
+      <button type="submit" className="btn btn--gold contact-form__submit">{kind === 'Join Attii Verse' ? 'Send Application' : kind === 'Organize an Event' ? 'Send Event Brief' : 'Send Message'} <span>↗</span></button>
       <p className="contact-form__note">Your message will be sent to {DESTINATION}.</p>
     </form>
   )

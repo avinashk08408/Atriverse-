@@ -34,7 +34,7 @@ function TalentSection() {
             />
             <Reveal dir="up" delay={120}>
               <p style={{ color: 'var(--text-muted)' }}>
-                ATTI VERSE is also a talent ecosystem — a place where performers, creators and
+                Attii Verse is also a talent ecosystem — a place where performers, creators and
                 production people find opportunity, community and a platform to grow.
               </p>
             </Reveal>

@@ -25,7 +25,7 @@ function EventHeroSlideshow({ event }) {
       <div className="event-hero-slideshow__image">
         <Img key={slides[activeSlide]} src={slides[activeSlide]} alt={`${event.title} — photo ${activeSlide + 1} of ${slides.length}`} />
       </div>
-      <div className="event-hero-slideshow__meta"><span>ATTI VERSE / EVENT ARCHIVE</span><span>{String(activeSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}</span></div>
+      <div className="event-hero-slideshow__meta"><span>Attii Verse / EVENT ARCHIVE</span><span>{String(activeSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}</span></div>
       <div className="event-hero-slideshow__dots" aria-hidden="true">{slides.map((_, i) => <i key={i} className={i === activeSlide ? 'is-active' : ''} />)}</div>
     </section>
   )
@@ -41,7 +41,7 @@ function EventDetail() {
   return (
     <>
       <Seo
-        title={`${event.title} | ATTI VERSE`}
+        title={`${event.title} | Attii Verse`}
         description={event.description}
         path={`/events/${slug}`}
       />
@@ -75,7 +75,7 @@ function EventDetail() {
             </Reveal>
             <Reveal dir="up" delay={120}>
               <p style={{ color: 'var(--text-muted)', marginTop: '1rem' }}>
-                “ATTI VERSE participated in {event.title} as part of its growing entertainment and
+                “Attii Verse participated in {event.title} as part of its growing entertainment and
                 cultural-performance journey.”
               </p>
             </Reveal>

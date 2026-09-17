@@ -1,5 +1,5 @@
 // ============================================================
-// ATTI VERSE — Central Site Configuration
+// Attii Verse — Central Site Configuration
 // ============================================================
 // Everything in this file is safe to update without touching
 // components. Replace the placeholder values below with real
@@ -7,8 +7,8 @@
 // ============================================================
 
 export const SITE = {
-  name: 'ATTI VERSE',
-  fullName: 'ATTI VERSE Entertainment & Productions',
+  name: 'Attii Verse',
+  fullName: 'Attii Verse Entertainment & Productions',
   tagline: 'Our Talent. Our Verse.',
   descriptor: 'Entertainment. Production. Experiences.',
   brandLine: 'Entertainment • Production • Events • Creative',

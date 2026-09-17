@@ -1,5 +1,5 @@
 /* ============================================================
-   ATTI VERSE — Components (full dark emerald theme)
+   Attii Verse — Components (full dark emerald theme)
    ============================================================ */
 
 /* ============================================================
@@ -2256,7 +2256,7 @@
 }
 
 /* ============================================================
-   WHY ATTI VERSE — numbered editorial
+   WHY Attii Verse — numbered editorial
    ============================================================ */
 
 .why-attii {
@@ -2822,7 +2822,7 @@
 }
 
 /* ============================================================
-   WHAT ATTI VERSE MEANS
+   WHAT Attii Verse MEANS
    ============================================================ */
 
 .meaning {
@@ -3282,7 +3282,7 @@
   color: var(--text-faint);
 }
 
-/* Centered ATTI VERSE hero opening */
+/* Centered Attii Verse hero opening */
 .hero__top { text-align: center; }
 .hero__brand-lockup { display:flex; align-items:center; justify-content:center; gap:clamp(.8rem,2vw,1.5rem); margin:0 auto clamp(1.5rem,3vh,2.4rem); width:min(100%,760px); }
 .hero__brand-lockup p { color:var(--white); font-family:var(--font-display); font-size:clamp(1rem,2vw,1.45rem); font-weight:700; letter-spacing:.32em; line-height:1; text-indent:.32em; white-space:nowrap; }
@@ -3423,7 +3423,7 @@
   .hero.hero--slideshow .hero__meta { gap: .35rem; }
 }
 
-/* Final mobile hero order: rectangle image -> ATTI VERSE -> description -> actions -> tags */
+/* Final mobile hero order: rectangle image -> Attii Verse -> description -> actions -> tags */
 @media (max-width: 640px) {
   .hero.hero--slideshow .hero__brand-lockup {
     margin-bottom: 1.15rem;
@@ -3450,7 +3450,7 @@
   .hero.hero--slideshow .hero__slides { order: 6; }
 }
 
-/* Desktop hero hierarchy: ATTI VERSE first, supporting message smaller */
+/* Desktop hero hierarchy: Attii Verse first, supporting message smaller */
 @media (min-width: 641px) {
   .hero.hero--slideshow .hero__brand-lockup {
     margin-bottom: 1rem;
@@ -3686,7 +3686,7 @@
 /* Integrated mission emphasis */
 .about-home__mission-items span { font-size:clamp(1rem,1.6vw,1.25rem); font-weight:600; text-transform:uppercase; }
 .about-home__mission-items b { font-size:1.18em; font-weight:800; letter-spacing:.02em; }
-/* Classic Why ATTI VERSE editorial layout */
+/* Classic Why Attii Verse editorial layout */
 .why-attii--classic { display:grid; grid-template-columns:1fr 1.15fr; gap:clamp(2.5rem,6vw,5rem); align-items:start; }
 .why-attii--classic .why-attii__head { display:block; }
 .why-attii--classic .why-attii__statement { margin-top:2rem; }

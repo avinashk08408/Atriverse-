@@ -94,7 +94,7 @@
 @media(max-width:1080px) { .nav__form-panel { top:1rem; right:1rem; } }
 @media(max-width:560px) { .nav__form-panel { top:.75rem; right:.75rem; width:calc(100vw - 1.5rem); max-height:calc(100vh - 1.5rem); } }
 
-/* Use the supplied ATTI VERSE mark in both Who We Are sections without a decorative frame. */
+/* Use the supplied Attii Verse mark in both Who We Are sections without a decorative frame. */
 .about-home__visual--logo { display:flex; align-items:center; justify-content:center; min-height:clamp(300px, 32vw, 460px); padding:0; border:0 !important; border-radius:0 !important; background:transparent; }
 .about-home__visual--logo::before,
 .about-profile__media--logo::before { display:none; }

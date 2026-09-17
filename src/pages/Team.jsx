@@ -23,7 +23,7 @@ function Leadership() {
                   <span className="founder-row__index">0{i + 1}</span>
                 </div>
                 <div className="founder-row__content">
-                  <div className="founder-row__meta"><span>ATTI VERSE / LEADERSHIP</span><span>0{i + 1} — 04</span></div>
+                  <div className="founder-row__meta"><span>Attii Verse / LEADERSHIP</span><span>0{i + 1} — 04</span></div>
                   <h2>{member.name}</h2>
                   <p className="founder-row__role">{member.role}</p>
                   {member.designation && <p className="founder-row__designation">{member.designation}</p>}
@@ -48,7 +48,7 @@ function Categories() {
         <SectionHeading
           eyebrow="The Collective"
           title={<>ROLES ACROSS<br /><span className="text-gold">THE VERSE.</span></>}
-          subtitle="A scalable operating structure for the talent, craft and production disciplines that make every ATTI VERSE experience possible."
+          subtitle="A scalable operating structure for the talent, craft and production disciplines that make every Attii Verse experience possible."
         />
         <div className="roles-roster">
           {TEAM_CATEGORIES.map((cat, ci) => (
@@ -84,14 +84,14 @@ function Team() {
   return (
     <>
       <Seo
-        title="Team | The People Behind ATTI VERSE"
-        description="The leadership and creative collective behind ATTI VERSE Entertainment & Productions — founders, performers, creators, designers, production and events teams."
+        title="Team | The People Behind Attii Verse"
+        description="The leadership and creative collective behind Attii Verse Entertainment & Productions — founders, performers, creators, designers, production and events teams."
         path="/team"
       />
       <PageHeader
         eyebrow="Team"
         crumb="Team"
-        title="THE PEOPLE BEHIND ATTI VERSE"
+        title="THE PEOPLE BEHIND Attii Verse"
         subtitle="Every performance, production and event is powered by people who bring their own talent, creativity and commitment."
       />
       <Leadership />

@@ -1,10 +1,10 @@
 // ============================================================
-// ATTI VERSE — Organizational content
-// All copy below reflects the verified positioning of ATTI VERSE.
+// Attii Verse — Organizational content
+// All copy below reflects the verified positioning of Attii Verse.
 // Never add clients, awards, revenue, attendance or dates here.
 // ============================================================
 
-// --- "Why ATTI VERSE" — numbered editorial blocks -------------
+// --- "Why Attii Verse" — numbered editorial blocks -------------
 export const WHY_BLOCKS = [
   {
     number: '01',
@@ -79,7 +79,7 @@ export const WHY_WORK_PILLARS = [
   { icon: 'people', title: 'Talent-Driven', note: 'Focused on developing and connecting creative talent.' },
 ]
 
-// --- "What ATTI VERSE means" -----------------------------------
+// --- "What Attii Verse means" -----------------------------------
 export const NAME_MEANING = {
   attii: [
     { letter: 'A', word: 'Attitude', note: 'Confidence and character in everything we create.' },
