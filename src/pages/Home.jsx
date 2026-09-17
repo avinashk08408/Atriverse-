@@ -47,7 +47,7 @@ function Hero() {
             key={heroSlides[activeSlide]}
             className="hero__slide"
             src={heroSlides[activeSlide]}
-            alt="Attii Verse live entertainment and production"
+            alt="ATTII VERSE live entertainment and production"
             priority={activeSlide === 0}
           />
         )}
@@ -64,7 +64,7 @@ function Hero() {
 
         <div className="hero__brand-lockup hero-line" style={{ animationDelay: '0.2s' }}>
           <span className="hero__brand-rule" />
-          <p>Attii Verse</p>
+          <p>ATTII VERSE</p>
           <span className="hero__brand-rule" />
         </div>
 
@@ -88,7 +88,7 @@ function Hero() {
             <span>{workWithUsOpen ? 'Close Form' : 'Work With Us'}</span>
           </button>
         </div>
-        {workWithUsOpen && <div className="hero__inline-form"><ContactForm kind="Join Attii Verse" compact /></div>}
+        {workWithUsOpen && <div className="hero__inline-form"><ContactForm kind="Join ATTII VERSE" compact /></div>}
 
         <div className="hero__meta hero-line" style={{ animationDelay: '0.85s' }}>
           <span>Entertainment</span>
@@ -123,8 +123,8 @@ function BrandIntro() {
               <div className="who-we-are-lockup">
                 <span className="who-we-are-lockup__rule" aria-hidden="true" />
                 <div className="who-we-are-lockup__content">
-                  <Img src={IMAGES.officialLogo} alt="The Attii Verse logo" aspect="1 / 1" className="about-home__logo" />
-                  <strong>THE Attii Verse</strong>
+                  <Img src={IMAGES.officialLogo} alt="The ATTII VERSE logo" aspect="1 / 1" className="about-home__logo" />
+                  <strong>THE ATTII VERSE</strong>
                   <span>OUR TALENT. OUR VERSE.</span>
                 </div>
               </div>
@@ -152,7 +152,7 @@ function BrandIntro() {
             </Reveal>
             <Reveal dir="up" delay={320}>
               <Link to="/about" className="text-link about-home__link">
-                Discover Attii Verse <span>↗</span>
+                Discover ATTII VERSE <span>↗</span>
               </Link>
             </Reveal>
             <Reveal dir="up" delay={400}>
@@ -203,7 +203,7 @@ function FeaturedWork() {
         <div className="work-index__more">
           <Link to="/work" className="btn btn--gold work-index__more-button">More Work <span>↗</span></Link>
         </div>
-        <div className="work-index__footer"><span>Attii Verse / CREATIVE PRACTICE</span><span>Entertainment · Events · Production · Creative</span></div>
+        <div className="work-index__footer"><span>ATTII VERSE / CREATIVE PRACTICE</span><span>Entertainment · Events · Production · Creative</span></div>
       </div>
     </section>
   )
@@ -276,7 +276,7 @@ function Milestones() {
     <section className="section milestones-newsroom">
       <div className="container">
         <div className="newsroom__masthead">
-          <span>THE Attii Verse CHRONICLE</span>
+          <span>THE ATTII VERSE CHRONICLE</span>
           <span>VERIFIED RECORD / MILESTONES</span>
           <span>ISSUE 01</span>
         </div>
@@ -336,12 +336,12 @@ function TeamPreview() {
       <div className="container">
         <div className="team-spotlight__header">
           <Reveal dir="up">
-            <div className="team-spotlight__label"><span>04 / Leadership</span><span>THE Attii Verse COUNCIL</span></div>
+            <div className="team-spotlight__label"><span>04 / Leadership</span><span>THE ATTII VERSE COUNCIL</span></div>
             <h2 className="team-spotlight__title">THE PEOPLE<br /><span className="text-gold">BEHIND THE VERSE.</span></h2>
           </Reveal>
           <Reveal dir="up" delay={120}>
             <div className="team-spotlight__intro">
-              <p>Four perspectives. One direction. Meet the people shaping the vision, operations, growth and experiences behind Attii Verse.</p>
+              <p>Four perspectives. One direction. Meet the people shaping the vision, operations, growth and experiences behind ATTII VERSE.</p>
               <Link to="/team" className="btn btn--gold team-spotlight__cta">Meet Our Team <span>↗</span></Link>
             </div>
           </Reveal>
@@ -394,8 +394,8 @@ function Home() {
   return (
     <>
       <Seo
-        title="Attii Verse Entertainment & Productions | Entertainment, Events & Media Production"
-        description="Attii Verse Entertainment & Productions brings together entertainment, event management, media production, creative services and talented creators to build memorable experiences."
+        title="ATTII VERSE Entertainment & Productions | Entertainment, Events & Media Production"
+        description="ATTII VERSE Entertainment & Productions brings together entertainment, event management, media production, creative services and talented creators to build memorable experiences."
         path="/"
       />
       <Hero />

@@ -41,7 +41,7 @@ function VerifiedEventDetail({ event }) {
   return (
     <section id={event.id} className="section events-featured">
       <div className="container">
-        <div className="events-featured__label"><span>01 / Verified Event</span><span>Attii Verse / EVENTS</span></div>
+        <div className="events-featured__label"><span>01 / Verified Event</span><span>ATTII VERSE / EVENTS</span></div>
         <div className="events-featured__grid">
         <Reveal dir="right">
           <FeaturedEventMedia event={event} />
@@ -62,15 +62,15 @@ function Events() {
   return (
     <div className="events-page">
       <Seo
-        title="Events & Experiences | Attii Verse"
-        description="From cultural celebrations and performances to event coordination and execution, Attii Verse creates and contributes to experiences that bring people together."
+        title="Events & Experiences | ATTII VERSE"
+        description="From cultural celebrations and performances to event coordination and execution, ATTII VERSE creates and contributes to experiences that bring people together."
         path="/events"
       />
       <PageHeader
         eyebrow="Events / Experiences"
         crumb="Events"
         title="EVENTS THAT MOVE PEOPLE"
-        subtitle="A growing record of cultural celebrations, live performances and coordinated experiences delivered across the Attii Verse ecosystem."
+        subtitle="A growing record of cultural celebrations, live performances and coordinated experiences delivered across the ATTII VERSE ecosystem."
       />
 
       {FEATURED_EVENTS.map((event) => (
@@ -78,7 +78,7 @@ function Events() {
       ))}
 
       <section className="section events-index-section">
-        <div className="container"><div className="events-index__intro"><SectionHeading eyebrow="02 / Event Register" title="EVENTS IN THE MAKING" /><p>Projects, performances and collaborations being documented by the Attii Verse team.</p></div><div className="events-register">
+        <div className="container"><div className="events-index__intro"><SectionHeading eyebrow="02 / Event Register" title="EVENTS IN THE MAKING" /><p>Projects, performances and collaborations being documented by the ATTII VERSE team.</p></div><div className="events-register">
             {EVENT_PLACEHOLDERS.map((event, i) => (
               <EventCard key={event.id} event={event} index={i} />
             ))}

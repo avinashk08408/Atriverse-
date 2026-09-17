@@ -1,5 +1,5 @@
 // ============================================================
-// Attii Verse — Central Image Configuration
+// ATTII VERSE — Central Image Configuration
 // ============================================================
 // Edit the paths below to point to your real images.
 // When a file is missing at runtime, the site automatically

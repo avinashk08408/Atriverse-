@@ -17,7 +17,7 @@ import { MISSION_ITEMS, VALUES } from '../data/organization.js'
 const TIMELINE = [
   {
     title: 'The Beginning',
-    desc: 'Attii Verse began as a college-based creative initiative built around talent and entertainment.',
+    desc: 'ATTII VERSE began as a college-based creative initiative built around talent and entertainment.',
   },
   {
     title: 'Building the Team',
@@ -37,7 +37,7 @@ const TIMELINE = [
   },
   {
     title: 'Growth',
-    desc: 'Attii Verse continues to build its portfolio, network, collaborations and digital presence.',
+    desc: 'ATTII VERSE continues to build its portfolio, network, collaborations and digital presence.',
   },
 ]
 
@@ -57,8 +57,8 @@ function WhoWeAre() {
             <div className="who-we-are-lockup">
               <span className="who-we-are-lockup__rule" aria-hidden="true" />
               <div className="who-we-are-lockup__content">
-                <Img src={IMAGES.officialLogo} alt="The Attii Verse logo" aspect="1 / 1" className="about-profile__logo" />
-                <strong>THE Attii Verse</strong>
+                <Img src={IMAGES.officialLogo} alt="The ATTII VERSE logo" aspect="1 / 1" className="about-profile__logo" />
+                <strong>THE ATTII VERSE</strong>
                 <span>OUR TALENT. OUR VERSE.</span>
               </div>
             </div>
@@ -66,7 +66,7 @@ function WhoWeAre() {
         </Reveal>
         <div className="about-profile__copy">
           <Reveal dir="up" delay={100}><p>
-            {`Attii Verse Entertainment & Productions is a multi-disciplinary creative organization working across entertainment, media production, event management and creative services.`}
+            {`ATTII VERSE Entertainment & Productions is a multi-disciplinary creative organization working across entertainment, media production, event management and creative services.`}
           </p></Reveal>
           <Reveal dir="up" delay={200}><p className="about-profile__muted">
               What began as a creative initiative has evolved into a structured organization built
@@ -121,7 +121,7 @@ function Vision() {
         </div>
         <Reveal dir="left" delay={120}>
           <p style={{ color: 'rgba(255,255,255,0.82)', fontSize: '1.05rem' }}>
-            Attii Verse aims to become a recognized entertainment and production platform that
+            ATTII VERSE aims to become a recognized entertainment and production platform that
             nurtures talent, creates opportunities, expands cultural expression and builds
             professional influence.
           </p>
@@ -142,7 +142,7 @@ function Mission() {
       <div className="container">
         <div className="about-mission__header">
           <SectionHeading eyebrow="Mission / Operating Commitments" title={<>WHAT WE ARE <span className="text-gold">BUILT TO DO</span></>} />
-          <p>Eight operating principles translate the Attii Verse vision into consistent creative work.</p>
+          <p>Eight operating principles translate the ATTII VERSE vision into consistent creative work.</p>
         </div>
         <div className="mission-num about-mission__grid about-mission__list">
           {MISSION_ITEMS.map((text, i) => (
@@ -211,7 +211,7 @@ function Leadership() {
           </Reveal>
         </div>
         <div className="about-leadership__bar">
-          <span>Attii Verse / LEADERSHIP</span>
+          <span>ATTII VERSE / LEADERSHIP</span>
           <span>01 — 04 / EXECUTIVE PROFILES</span>
         </div>
         <div className="grid-4 about-leadership__grid">
@@ -229,14 +229,14 @@ function About() {
   return (
     <>
       <Seo
-        title="About Attii Verse | Talent, Creativity & Opportunity"
-        description="Attii Verse Entertainment & Productions is a multi-disciplinary creative organization working across entertainment, media production, event management and creative services."
+        title="About ATTII VERSE | Talent, Creativity & Opportunity"
+        description="ATTII VERSE Entertainment & Productions is a multi-disciplinary creative organization working across entertainment, media production, event management and creative services."
         path="/about"
       />
       <PageHeader
         eyebrow="About Us"
         crumb="About"
-        title={<>ABOUT <span className="text-gold">Attii Verse</span></>}
+        title={<>ABOUT <span className="text-gold">ATTII VERSE</span></>}
         subtitle="A structured creative organization built for entertainment, production and cultural impact."
         image={IMAGES.aboutHome}
       />

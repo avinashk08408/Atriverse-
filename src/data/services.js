@@ -13,7 +13,7 @@ export const SERVICES = [
     description:
       'Dance performances, stage performances, flash mobs, cultural performances, hosting, MC and audience engagement.',
     hero:
-      'Entertainment is where Attii Verse lives — live performance, energy, cultural expression and the craft of holding an audience.',
+      'Entertainment is where ATTII VERSE lives — live performance, energy, cultural expression and the craft of holding an audience.',
     capabilities: [
       'Dance Performances',
       'Stage Performances',

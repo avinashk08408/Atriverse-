@@ -95,8 +95,8 @@ function Achievements() {
   return (
     <>
       <Seo
-        title="Achievements | Milestones & Recognition — Attii Verse"
-        description="Verified milestones and recognition of Attii Verse Entertainment & Productions — registrations, participations, performances and certifications."
+        title="Achievements | Milestones & Recognition — ATTII VERSE"
+        description="Verified milestones and recognition of ATTII VERSE Entertainment & Productions — registrations, participations, performances and certifications."
         path="/achievements"
       />
       <PageHeader

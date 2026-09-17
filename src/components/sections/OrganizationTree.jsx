@@ -8,7 +8,7 @@ function OrganizationTree() {
       <Reveal dir="up">
         <div className="org-tree__lead">
           <span className="org-tree__lead-crown" aria-hidden="true">✦</span>
-          <strong>Attii Verse</strong>
+          <strong>ATTII VERSE</strong>
           <span className="org-tree__lead-sub">Executive Leadership &amp; Governance</span>
         </div>
       </Reveal>

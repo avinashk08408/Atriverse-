@@ -29,8 +29,8 @@ function Gallery() {
   return (
     <div className="gallery-page">
       <Seo
-        title="Gallery | Our Moments — Attii Verse"
-        description="A visual gallery of events, performances, production, behind-the-scenes and creative moments from the Attii Verse ecosystem."
+        title="Gallery | Our Moments — ATTII VERSE"
+        description="A visual gallery of events, performances, production, behind-the-scenes and creative moments from the ATTII VERSE ecosystem."
         path="/gallery"
       />
       <PageHeader
