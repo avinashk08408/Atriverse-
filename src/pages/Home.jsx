@@ -120,7 +120,14 @@ function BrandIntro() {
         <div className="about-home__grid">
           <Reveal dir="right" delay={100}>
             <div className="about-home__visual about-home__visual--logo">
-              <Img src={IMAGES.officialLogo} alt="The ATTI VERSE logo" aspect="1 / 1" className="about-home__logo" />
+              <div className="who-we-are-lockup">
+                <span className="who-we-are-lockup__rule" aria-hidden="true" />
+                <div className="who-we-are-lockup__content">
+                  <Img src={IMAGES.officialLogo} alt="The ATTI VERSE logo" aspect="1 / 1" className="about-home__logo" />
+                  <strong>THE ATTI VERSE</strong>
+                  <span>OUR TALENT. OUR VERSE.</span>
+                </div>
+              </div>
             </div>
           </Reveal>
           <div className="about-home__copy">

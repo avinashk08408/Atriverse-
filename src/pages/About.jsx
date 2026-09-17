@@ -54,7 +54,14 @@ function WhoWeAre() {
         <div className="about-profile__body">
         <Reveal dir="up" delay={100}>
           <div className="about-profile__media about-profile__media--logo">
-            <Img src={IMAGES.officialLogo} alt="The ATTI VERSE logo" aspect="1 / 1" className="about-profile__logo" />
+            <div className="who-we-are-lockup">
+              <span className="who-we-are-lockup__rule" aria-hidden="true" />
+              <div className="who-we-are-lockup__content">
+                <Img src={IMAGES.officialLogo} alt="The ATTI VERSE logo" aspect="1 / 1" className="about-profile__logo" />
+                <strong>THE ATTI VERSE</strong>
+                <span>OUR TALENT. OUR VERSE.</span>
+              </div>
+            </div>
           </div>
         </Reveal>
         <div className="about-profile__copy">
