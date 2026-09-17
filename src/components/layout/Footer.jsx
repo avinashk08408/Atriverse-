@@ -46,6 +46,9 @@ function Footer() {
                   <Icon name={s.icon} size={18} />
                 </a>
               ))}
+              <span className="footer__social footer__social--disabled" aria-label="LinkedIn profile coming soon" title="LinkedIn profile coming soon">
+                <Icon name="linkedin" size={18} />
+              </span>
               <a className="footer__social" href={`mailto:${SITE.email}`} aria-label="Email ATTI VERSE">
                 <Icon name="mail" size={18} />
               </a>
