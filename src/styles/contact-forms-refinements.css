@@ -100,6 +100,14 @@
 .hero__tagline { color:var(--white) !important; }
 .hero__title-line--attii,
 .hero__title-line--verse { background:none; -webkit-text-fill-color:var(--white); color:var(--white); }
+.hero { align-items:center; }
+.hero__inner { padding-bottom:0; text-align:center; }
+.hero__top,
+.hero__title-block { align-items:center; }
+.hero__gold-rule { margin-inline:auto; }
+.hero__actions,
+.hero__meta,
+.hero__slides { justify-content:center; }
 
 /* Use the supplied ATTII VERSE mark in both Who We Are sections without a decorative frame. */
 .about-home__visual--logo { display:flex; align-items:center; justify-content:center; min-height:clamp(300px, 32vw, 460px); padding:0; border:0 !important; border-radius:0 !important; background:transparent; }
