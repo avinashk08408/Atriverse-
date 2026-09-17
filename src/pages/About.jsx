@@ -53,9 +53,8 @@ function WhoWeAre() {
         </div>
         <div className="about-profile__body">
         <Reveal dir="up" delay={100}>
-          <div className="about-profile__media">
-            <Img src={IMAGES.aboutHome} alt="The people and creative work of ATTI VERSE" aspect="16 / 10" />
-            <span>ATTI VERSE / COMPANY PROFILE</span>
+          <div className="about-profile__media about-profile__media--logo">
+            <Img src={IMAGES.officialLogo} alt="The ATTI VERSE logo" aspect="1 / 1" className="about-profile__logo" />
           </div>
         </Reveal>
         <div className="about-profile__copy">

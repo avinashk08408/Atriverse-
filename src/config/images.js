@@ -32,6 +32,7 @@ export const IMAGES = withBase({
   // --- Brand logo -------------------------------------------
   // Replace with your final logo file (png/webp/svg) as needed.
   logo: '/images/atti-verse-logo.jpeg',
+  officialLogo: '/images/atti-verse-official.png',
 
   // --- Hero / brand visuals ---------------------------------
   hero: '/images/hero-main.jpg',

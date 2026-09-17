@@ -119,15 +119,8 @@ function BrandIntro() {
       <div className="container">
         <div className="about-home__grid">
           <Reveal dir="right" delay={100}>
-            <div className="about-home__visual">
-            <Img
-              src={IMAGES.aboutHome}
-              alt="The ATTI VERSE creative ecosystem"
-              aspect="4 / 3"
-              className="about-home__image"
-            />
-              <div className="about-home__stamp">CREATIVE ECOSYSTEM</div>
-              <div className="about-home__index">01 <span>/ ABOUT</span></div>
+            <div className="about-home__visual about-home__visual--logo">
+              <Img src={IMAGES.officialLogo} alt="The ATTI VERSE logo" aspect="1 / 1" className="about-home__logo" />
             </div>
           </Reveal>
           <div className="about-home__copy">

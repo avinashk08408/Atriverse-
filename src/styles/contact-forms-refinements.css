@@ -93,3 +93,11 @@
 .nav__form-panel .contact-form { background:rgba(255,255,255,.025); }
 @media(max-width:1080px) { .nav__form-panel { top:1rem; right:1rem; } }
 @media(max-width:560px) { .nav__form-panel { top:.75rem; right:.75rem; width:calc(100vw - 1.5rem); max-height:calc(100vh - 1.5rem); } }
+
+/* Use the supplied ATTI VERSE mark in both Who We Are sections without a decorative frame. */
+.about-home__visual--logo { display:flex; align-items:center; justify-content:center; padding:0; }
+.about-home__visual--logo::before,
+.about-profile__media--logo::before { display:none; }
+.about-home__visual--logo .about-home__logo,
+.about-profile__media--logo .about-profile__logo { width:min(100%, 430px); aspect-ratio:1; border-radius:50%; box-shadow:none; object-fit:contain; }
+.about-profile__media--logo { display:flex; align-items:center; justify-content:center; padding:0; }
